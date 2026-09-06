@@ -12,18 +12,15 @@
     Ellsworth Barrett | Alpenglow View Studios
   </title>
 
-
   <style>
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       min-height: 100%;
     }
-
 
     body {
       margin: 0;
@@ -38,8 +35,8 @@
 
       background:
         linear-gradient(
-          rgba(3, 10, 15, .42),
-          rgba(3, 8, 12, .82)
+          rgba(3, 10, 15, .20),
+          rgba(3, 8, 12, .46)
         ),
         url("sunset.png");
 
@@ -62,11 +59,9 @@
     }
 
 
-
     /* =========================
-       TOP ARTIST AREA
+       ARTIST HEADER
        ========================= */
-
 
     .hero {
       padding:
@@ -77,20 +72,18 @@
 
       background:
         linear-gradient(
-          rgba(0, 10, 18, .54),
-          rgba(0, 8, 14, .74)
+          rgba(0, 10, 18, .18),
+          rgba(0, 8, 14, .30)
         );
 
       border:
-        1px solid
-        rgba(222, 170, 70, .45);
+        1px solid rgba(222, 170, 70, .45);
 
       box-shadow:
-        0 12px 34px
-        rgba(0,0,0,.45);
+        0 12px 34px rgba(0,0,0,.25);
 
       backdrop-filter:
-        blur(3px);
+        blur(1px);
     }
 
 
@@ -113,18 +106,15 @@
       border-radius: 50%;
 
       border:
-        3px solid
-        #d9a640;
+        3px solid #d9a640;
 
       box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.6);
+        0 8px 25px rgba(0,0,0,.5);
     }
 
 
     .tagline {
-      color:
-        #e8b757;
+      color: #e8b757;
 
       font-family:
         "Brush Script MT",
@@ -137,8 +127,7 @@
       text-align: left;
 
       text-shadow:
-        0 2px 6px
-        rgba(0,0,0,.8);
+        0 2px 6px rgba(0,0,0,.8);
     }
 
 
@@ -164,8 +153,7 @@
       line-height: .95;
 
       text-shadow:
-        0 4px 12px
-        rgba(0,0,0,.8);
+        0 4px 12px rgba(0,0,0,.8);
     }
 
 
@@ -177,6 +165,9 @@
       font-size: 13px;
 
       letter-spacing: 4px;
+
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -185,12 +176,14 @@
 
       text-align: center;
 
-      color:
-        #e1ad4b;
+      color: #e1ad4b;
 
       font-size: 12px;
 
       letter-spacing: 3px;
+
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -204,15 +197,16 @@
       letter-spacing: 3px;
 
       color:
-        rgba(255,255,255,.82);
-    }
+        rgba(255,255,255,.90);
 
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
+    }
 
 
     /* =========================
        SONG CARDS
        ========================= */
-
 
     .songs {
       display: grid;
@@ -242,17 +236,15 @@
 
       background:
         linear-gradient(
-          rgba(4,10,14,.83),
-          rgba(1,4,7,.92)
+          rgba(4,10,14,.35),
+          rgba(1,4,7,.48)
         );
 
       border:
-        1px solid
-        rgba(215,163,61,.6);
+        1px solid rgba(215,163,61,.6);
 
       box-shadow:
-        0 10px 28px
-        rgba(0,0,0,.55);
+        0 10px 28px rgba(0,0,0,.38);
     }
 
 
@@ -268,12 +260,10 @@
       border-radius: 8px;
 
       border:
-        1px solid
-        #c79535;
+        1px solid #c79535;
 
       box-shadow:
-        0 7px 20px
-        rgba(0,0,0,.5);
+        0 7px 20px rgba(0,0,0,.45);
     }
 
 
@@ -300,16 +290,13 @@
       line-height: 1.08;
 
       text-shadow:
-        0 2px 5px
-        rgba(0,0,0,.8);
+        0 2px 5px rgba(0,0,0,.9);
     }
-
 
 
     /* =========================
        AUDIO PLAYER
        ========================= */
-
 
     .play-button {
       width: 94%;
@@ -322,16 +309,14 @@
         11px 4px;
 
       border:
-        2px solid
-        #dba642;
+        2px solid #dba642;
 
       border-radius: 30px;
 
       background:
-        rgba(5,5,5,.92);
+        rgba(5,5,5,.78);
 
-      color:
-        #fff;
+      color: #fff;
 
       font-size: 14px;
 
@@ -359,30 +344,29 @@
     .progress {
       width: 94%;
 
-      accent-color:
-        #d9a442;
+      accent-color: #d9a442;
     }
 
 
     .time {
       margin-top: 2px;
 
-      color:
-        #bbb;
+      color: #ddd;
 
       font-family:
         Arial,
         sans-serif;
 
       font-size: 10px;
-    }
 
+      text-shadow:
+        0 1px 3px rgba(0,0,0,.8);
+    }
 
 
     /* =========================
        LISTEN / LINKS
        ========================= */
-
 
     .section-title {
       margin:
@@ -396,8 +380,7 @@
       letter-spacing: 5px;
 
       text-shadow:
-        0 2px 5px
-        rgba(0,0,0,.8);
+        0 2px 5px rgba(0,0,0,.9);
     }
 
 
@@ -407,18 +390,16 @@
       border-radius: 16px;
 
       background:
-        rgba(0,8,12,.72);
+        rgba(0,8,12,.34);
 
       border:
-        1px solid
-        rgba(210,157,55,.45);
+        1px solid rgba(210,157,55,.45);
 
       box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.4);
+        0 8px 25px rgba(0,0,0,.3);
 
       backdrop-filter:
-        blur(4px);
+        blur(1px);
     }
 
 
@@ -446,11 +427,10 @@
       border-radius: 30px;
 
       border:
-        1px solid
-        #b98b36;
+        1px solid #b98b36;
 
       background:
-        rgba(8,8,8,.9);
+        rgba(8,8,8,.72);
 
       color: white;
 
@@ -485,13 +465,12 @@
       align-items: center;
 
       border:
-        1px solid
-        #d3a043;
+        1px solid #d3a043;
 
       border-radius: 30px;
 
       background:
-        rgba(8,8,8,.9);
+        rgba(8,8,8,.72);
 
       color: white;
 
@@ -509,11 +488,9 @@
     }
 
 
-
     /* =========================
        FOOTER
        ========================= */
-
 
     .footer {
       margin-top: 28px;
@@ -527,8 +504,8 @@
 
       background:
         linear-gradient(
-          rgba(0,5,8,.3),
-          rgba(0,5,8,.8)
+          rgba(0,5,8,.16),
+          rgba(0,5,8,.34)
         );
     }
 
@@ -537,41 +514,45 @@
       font-size: 12px;
 
       letter-spacing: 4px;
+
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
     }
 
 
     .footer-location {
       margin-top: 6px;
 
-      color:
-        #d9a544;
+      color: #d9a544;
 
       font-size: 11px;
 
       letter-spacing: 3px;
+
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
     }
 
 
     .footer-tag {
       margin-top: 18px;
 
-      color:
-        #ccc;
+      color: #ddd;
 
       font-size: 10px;
 
       letter-spacing: 4px;
-    }
 
+      text-shadow:
+        0 2px 5px rgba(0,0,0,.8);
+    }
 
 
     /* =========================
        PHONE
        ========================= */
 
-
-    @media
-    (max-width: 520px) {
+    @media (max-width: 520px) {
 
       body {
         background-position:
@@ -581,13 +562,11 @@
           scroll;
       }
 
-
       .page {
         padding:
           12px 10px
           26px;
       }
-
 
       .hero {
         padding:
@@ -595,17 +574,14 @@
           16px;
       }
 
-
       .profile {
         width: 95px;
         height: 95px;
       }
 
-
       .tagline {
         font-size: 20px;
       }
-
 
       .artist-name {
         font-size:
@@ -616,18 +592,15 @@
           );
       }
 
-
       .studio {
         font-size: 11px;
 
         letter-spacing: 3px;
       }
 
-
       .location {
         font-size: 10px;
       }
-
 
       .motto {
         font-size: 9px;
@@ -635,11 +608,9 @@
         letter-spacing: 2px;
       }
 
-
       .songs {
         gap: 8px;
       }
-
 
       .song-card {
         padding:
@@ -647,14 +618,11 @@
           10px;
       }
 
-
       .song-title {
         min-height: 48px;
 
-        font-size:
-          14px;
+        font-size: 14px;
       }
-
 
       .play-button {
         width: 96%;
@@ -664,14 +632,11 @@
     }
 
 
-
     /* =========================
-       TABLET
+       TABLET / DESKTOP
        ========================= */
 
-
-    @media
-    (min-width: 700px) {
+    @media (min-width: 700px) {
 
       .page {
         padding:
@@ -679,24 +644,20 @@
           45px;
       }
 
-
       .hero {
         padding:
           25px 20px
           28px;
       }
 
-
       .profile {
         width: 140px;
         height: 140px;
       }
 
-
       .tagline {
         font-size: 29px;
       }
-
 
       .songs {
         gap: 26px;
@@ -704,23 +665,19 @@
         margin-top: 28px;
       }
 
-
       .song-card {
         padding:
           12px 12px
           18px;
       }
 
-
       .song-title {
         font-size: 25px;
       }
 
-
       .play-button {
         max-width: 260px;
       }
-
 
       .links-panel {
         max-width: 620px;
@@ -735,15 +692,9 @@
 </head>
 
 
-
 <body>
 
 <div class="page">
-
-
-  <!-- =======================
-       ARTIST HEADER
-       ======================= -->
 
 
   <header class="hero">
@@ -754,7 +705,6 @@
         src="ellsworth-profile.png"
         class="profile"
         alt="Ellsworth Barrett">
-
 
       <div class="tagline">
         Music<br>
@@ -788,16 +738,7 @@
   </header>
 
 
-
-  <!-- =======================
-       SONGS
-       ======================= -->
-
-
   <section class="songs">
-
-
-    <!-- SONG 1 -->
 
 
     <article class="song-card">
@@ -807,11 +748,9 @@
         class="cover"
         alt="The Ink Has Finally Dried">
 
-
       <div class="song-title">
         The Ink Has Finally Dried
       </div>
-
 
       <audio
         id="audio1"
@@ -819,14 +758,12 @@
         src="ink.mp3">
       </audio>
 
-
       <button
         id="button1"
         class="play-button"
         onclick="toggleSong(1)">
         ▶ PLAY
       </button>
-
 
       <div class="progress-wrap">
 
@@ -838,22 +775,15 @@
           max="100"
           value="0">
 
-
         <div
           id="time1"
           class="time">
-
           0:00 / --:--
-
         </div>
 
       </div>
 
     </article>
-
-
-
-    <!-- SONG 2 -->
 
 
     <article class="song-card">
@@ -863,11 +793,9 @@
         class="cover"
         alt="She Saw Me Before She Knew Me">
 
-
       <div class="song-title">
         She Saw Me Before She Knew Me
       </div>
-
 
       <audio
         id="audio2"
@@ -875,14 +803,12 @@
         src="she-saw-me.mp3">
       </audio>
 
-
       <button
         id="button2"
         class="play-button"
         onclick="toggleSong(2)">
         ▶ PLAY
       </button>
-
 
       <div class="progress-wrap">
 
@@ -894,13 +820,10 @@
           max="100"
           value="0">
 
-
         <div
           id="time2"
           class="time">
-
           0:00 / --:--
-
         </div>
 
       </div>
@@ -910,12 +833,6 @@
   </section>
 
 
-
-  <!-- =======================
-       LISTEN
-       ======================= -->
-
-
   <div class="section-title">
     LISTEN ON
   </div>
@@ -923,55 +840,41 @@
 
   <div class="links-panel">
 
-
     <div class="streaming">
-
 
       <a
         class="service"
         href="https://open.spotify.com/artist/3UT4RV8hkQFtdRP3pOsziC"
         target="_blank"
         rel="noopener">
-
         Spotify
-
       </a>
-
 
       <a
         class="service"
         href="https://distrokid.com/hyperfollow/ellsworthbarrett/she-saw-me-before-she-knew-me"
         target="_blank"
         rel="noopener">
-
         Streaming Links
-
       </a>
 
     </div>
 
 
-
     <div class="actions">
-
 
       <button
         class="action"
         onclick="sharePage()">
-
         Share
-
       </button>
-
 
       <a
         class="action"
         href="https://www.facebook.com/profile.php?id=61593677165648"
         target="_blank"
         rel="noopener">
-
         Facebook
-
       </a>
 
     </div>
@@ -979,29 +882,19 @@
   </div>
 
 
-
-  <!-- =======================
-       FOOTER
-       ======================= -->
-
-
   <footer class="footer">
-
 
     <div class="footer-brand">
       ALPENGLOW VIEW STUDIOS
     </div>
 
-
     <div class="footer-location">
       POLSON, MONTANA
     </div>
 
-
     <div class="footer-tag">
       SCAN · LISTEN · DISCOVER
     </div>
-
 
   </footer>
 
@@ -1009,352 +902,210 @@
 </div>
 
 
-
 <script>
 
-
   const audio1 =
-    document.getElementById(
-      "audio1"
-    );
-
+    document.getElementById("audio1");
 
   const audio2 =
-    document.getElementById(
-      "audio2"
-    );
-
+    document.getElementById("audio2");
 
   const button1 =
-    document.getElementById(
-      "button1"
-    );
-
+    document.getElementById("button1");
 
   const button2 =
-    document.getElementById(
-      "button2"
-    );
-
+    document.getElementById("button2");
 
   const progress1 =
-    document.getElementById(
-      "progress1"
-    );
-
+    document.getElementById("progress1");
 
   const progress2 =
-    document.getElementById(
-      "progress2"
-    );
-
+    document.getElementById("progress2");
 
   const time1 =
-    document.getElementById(
-      "time1"
-    );
-
+    document.getElementById("time1");
 
   const time2 =
-    document.getElementById(
-      "time2"
-    );
+    document.getElementById("time2");
 
 
+  function formatTime(seconds) {
 
-  function formatTime(
-    seconds
-  ) {
-
-    if (
-      !isFinite(
-        seconds
-      )
-    ) {
-
+    if (!isFinite(seconds)) {
       return "--:--";
-
     }
 
-
     const minutes =
-      Math.floor(
-        seconds / 60
-      );
-
+      Math.floor(seconds / 60);
 
     const secs =
-      Math.floor(
-        seconds % 60
-      );
-
+      Math.floor(seconds % 60);
 
     return (
       minutes +
       ":" +
-      secs
-        .toString()
-        .padStart(
-          2,
-          "0"
-        )
+      secs.toString().padStart(2, "0")
     );
-
   }
 
 
-
-  function toggleSong(
-    number
-  ) {
-
+  function toggleSong(number) {
 
     const selected =
       number === 1
       ? audio1
       : audio2;
 
-
     const other =
       number === 1
       ? audio2
       : audio1;
 
-
     other.pause();
 
-
-    if (
-      selected.paused
-    ) {
-
+    if (selected.paused) {
       selected.play();
-
     }
-
     else {
-
       selected.pause();
-
     }
-
   }
-
 
 
   function updateButtons() {
 
-
     button1.textContent =
       audio1.paused
-
       ? "▶ PLAY"
-
       : "❚❚ PAUSE";
-
 
     button2.textContent =
       audio2.paused
-
       ? "▶ PLAY"
-
       : "❚❚ PAUSE";
-
   }
 
 
-
   audio1.addEventListener(
     "play",
     updateButtons
   );
-
 
   audio1.addEventListener(
     "pause",
     updateButtons
   );
 
-
   audio2.addEventListener(
     "play",
     updateButtons
   );
 
-
   audio2.addEventListener(
     "pause",
     updateButtons
   );
-
 
 
   audio1.addEventListener(
     "timeupdate",
     function() {
 
-
-      if (
-        audio1.duration
-      ) {
-
+      if (audio1.duration) {
 
         progress1.value =
           audio1.currentTime /
           audio1.duration *
           100;
 
-
         time1.textContent =
-          formatTime(
-            audio1.currentTime
-          )
-
+          formatTime(audio1.currentTime)
           +
-
           " / "
-
           +
-
-          formatTime(
-            audio1.duration
-          );
-
+          formatTime(audio1.duration);
       }
-
     }
   );
-
 
 
   audio2.addEventListener(
     "timeupdate",
     function() {
 
-
-      if (
-        audio2.duration
-      ) {
-
+      if (audio2.duration) {
 
         progress2.value =
           audio2.currentTime /
           audio2.duration *
           100;
 
-
         time2.textContent =
-          formatTime(
-            audio2.currentTime
-          )
-
+          formatTime(audio2.currentTime)
           +
-
           " / "
-
           +
-
-          formatTime(
-            audio2.duration
-          );
-
+          formatTime(audio2.duration);
       }
-
     }
   );
-
 
 
   audio1.addEventListener(
     "loadedmetadata",
     function() {
 
-
       time1.textContent =
-
         "0:00 / "
-
         +
-
-        formatTime(
-          audio1.duration
-        );
-
+        formatTime(audio1.duration);
     }
   );
-
 
 
   audio2.addEventListener(
     "loadedmetadata",
     function() {
 
-
       time2.textContent =
-
         "0:00 / "
-
         +
-
-        formatTime(
-          audio2.duration
-        );
-
+        formatTime(audio2.duration);
     }
   );
-
 
 
   progress1.addEventListener(
     "input",
     function() {
 
-
-      if (
-        audio1.duration
-      ) {
-
+      if (audio1.duration) {
 
         audio1.currentTime =
-
           progress1.value /
           100 *
-
           audio1.duration;
-
       }
-
     }
   );
-
 
 
   progress2.addEventListener(
     "input",
     function() {
 
-
-      if (
-        audio2.duration
-      ) {
-
+      if (audio2.duration) {
 
         audio2.currentTime =
-
           progress2.value /
           100 *
-
           audio2.duration;
-
       }
-
     }
   );
 
 
-
   async function sharePage() {
-
 
     const shareData = {
 
@@ -1366,14 +1117,10 @@
 
       url:
         window.location.href
-
     };
 
 
-    if (
-      navigator.share
-    ) {
-
+    if (navigator.share) {
 
       try {
 
@@ -1382,21 +1129,13 @@
         );
 
       }
-
-      catch (
-        error
-      ) {
-
+      catch (error) {
       }
 
     }
-
-
     else {
 
-
       try {
-
 
         await navigator
           .clipboard
@@ -1404,29 +1143,19 @@
             window.location.href
           );
 
-
         alert(
           "Link copied to clipboard."
         );
 
       }
-
-
-      catch (
-        error
-      ) {
-
+      catch (error) {
 
         alert(
           window.location.href
         );
-
       }
-
     }
-
   }
-
 
 </script>
 
