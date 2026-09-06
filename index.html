@@ -7,77 +7,130 @@
 <title>Ellsworth Barrett | Alpenglow View Studios</title>
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  padding: 18px;
-  background: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
+  color: #f5f0e6;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top right, rgba(190,105,25,.35), transparent 30%),
+    linear-gradient(180deg, #17314b 0%, #111820 35%, #090909 72%);
 }
 
-.container {
-  max-width: 620px;
+.page {
+  max-width: 1200px;
   margin: auto;
+  padding: 28px 22px 45px;
 }
+
+
+/* ---------- HEADER ---------- */
 
 .header {
-  margin: 8px 0 22px;
+  position: relative;
+  min-height: 185px;
+  text-align: center;
+  padding-top: 20px;
 }
 
-.header h1 {
+.profile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d6a33e;
+  box-shadow: 0 8px 25px rgba(0,0,0,.6);
+}
+
+.artist-name {
+  font-family: cursive;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 1;
   margin: 0;
-  font-size: 28px;
   font-weight: normal;
 }
 
-.header .studio {
-  margin-top: 7px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #999;
+.studio {
+  margin-top: 14px;
+  font-size: 17px;
+  letter-spacing: 5px;
 }
 
-.song {
-  margin-bottom: 38px;
+.location {
+  color: #d6a33e;
+  font-size: 14px;
+  letter-spacing: 3px;
+  margin-top: 7px;
+}
+
+.tagline {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 145px;
+  color: #e2b651;
+  font-family: cursive;
+  font-size: 23px;
+  line-height: 1.15;
+}
+
+
+/* ---------- SONG GRID ---------- */
+
+.songs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 28px;
+}
+
+.song-card {
+  text-align: center;
 }
 
 .cover {
   display: block;
   width: 100%;
-  max-width: 560px;
-  height: auto;
-  margin: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.6);
+  border: 2px solid #c99a39;
+  box-shadow: 0 10px 30px rgba(0,0,0,.7);
 }
 
 .song-title {
-  margin: 15px 0 3px;
-  font-size: 22px;
+  font-size: 27px;
+  margin-top: 15px;
   font-weight: bold;
 }
 
-.artist {
-  margin-bottom: 14px;
-  font-size: 16px;
+.song-artist {
+  color: #e1b34e;
+  font-size: 19px;
   font-style: italic;
-  color: #ccc;
+  margin: 7px 0 14px;
 }
+
+
+/* ---------- PLAYER ---------- */
 
 .player {
-  max-width: 560px;
-  margin: auto;
+  padding: 7px 5px;
 }
 
-.progress-wrap {
+.progress-row {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 9px;
-  font-size: 12px;
   color: #aaa;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
 }
 
 .progress {
@@ -89,209 +142,366 @@ body {
 .controls {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 17px;
-  margin-top: 11px;
+  gap: 14px;
+  margin-top: 12px;
 }
 
-.control-btn {
-  width: 43px;
-  height: 43px;
-  border: 1px solid #555;
+.control {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #222;
+  border: 1px solid #666;
+  background: #171717;
   color: white;
   font-size: 18px;
   cursor: pointer;
 }
 
-.play-btn {
+.play {
   width: 52px;
   height: 52px;
-  background: white;
+  background: #eee;
   color: #111;
-  border: none;
-  font-size: 21px;
+  border: 2px solid #c99a39;
 }
 
-.divider {
-  height: 1px;
-  background: #333;
-  margin: 5px auto 35px;
-  max-width: 500px;
+
+/* ---------- LISTEN ON ---------- */
+
+.listen-title {
+  margin: 45px auto 20px;
+  text-align: center;
+  letter-spacing: 6px;
+  font-size: 13px;
+  color: #ddd;
 }
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.service {
+  text-decoration: none;
+  color: #fff;
+  background: #181818;
+  border: 1px solid #9a7734;
+  border-radius: 999px;
+  padding: 10px 17px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.service:hover {
+  background: #292929;
+}
+
+
+/* ---------- ACTIONS ---------- */
 
 .actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
+  margin-top: 35px;
   flex-wrap: wrap;
-  margin: 10px 0 22px;
 }
 
-.action-btn {
-  padding: 10px 17px;
-  border: 1px solid #555;
+.action {
+  border: 1px solid #c99a39;
   border-radius: 999px;
-  background: #1c1c1c;
+  background: #111;
   color: white;
+  padding: 11px 25px;
   text-decoration: none;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
   cursor: pointer;
 }
 
+
+/* ---------- FOOTER ---------- */
+
 .footer {
-  margin: 25px 0 10px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #777;
+  text-align: center;
+  margin-top: 40px;
 }
 
+.footer-brand {
+  letter-spacing: 4px;
+  font-size: 14px;
+}
+
+.footer-location {
+  color: #c99a39;
+  letter-spacing: 3px;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.footer-tag {
+  margin-top: 24px;
+  letter-spacing: 7px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+
+  .page {
+    padding: 20px 14px 35px;
+  }
+
+  .header {
+    padding-top: 0;
+    min-height: auto;
+  }
+
+  .profile {
+    position: static;
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 12px;
+  }
+
+  .tagline {
+    position: static;
+    width: auto;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+
+  .artist-name {
+    font-size: 45px;
+  }
+
+  .studio {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .songs {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    margin-top: 25px;
+  }
+
+  .song-title {
+    font-size: 23px;
+  }
+}
 </style>
 </head>
 
+
 <body>
 
-<div class="container">
-
-  <div class="header">
-    <h1>Ellsworth Barrett</h1>
-    <div class="studio">ALPENGLOW VIEW STUDIOS</div>
-  </div>
+<div class="page">
 
 
-  <!-- SONG ONE -->
+  <!-- HEADER -->
 
-  <div class="song">
+  <header class="header">
 
     <img
-      class="cover"
-      src="The Ink Finally Dried 1.0.png"
-      alt="The Ink Has Finally Dried">
+      src="ellsworth-profile.png"
+      class="profile"
+      alt="Ellsworth Barrett">
 
-    <div class="song-title">
-      The Ink Has Finally Dried
+    <h1 class="artist-name">
+      Ellsworth Barrett
+    </h1>
+
+    <div class="studio">
+      ALPENGLOW VIEW STUDIOS
     </div>
 
-    <div class="artist">
-      ~ Ellsworth Barrett ~
+    <div class="location">
+      POLSON, MONTANA
     </div>
 
-    <div class="player">
+    <div class="tagline">
+      Music<br>
+      Brings<br>
+      People<br>
+      Together
+    </div>
 
-      <audio id="audio1" preload="metadata">
-        <source src="ink.mp3" type="audio/mpeg">
-      </audio>
+  </header>
 
-      <div class="progress-wrap">
-        <span id="time1">0:00</span>
 
-        <input
-          id="progress1"
-          class="progress"
-          type="range"
-          min="0"
-          max="100"
-          value="0">
+  <!-- TWO SONGS -->
 
-        <span id="duration1">--:--</span>
+  <section class="songs">
+
+
+    <!-- THE INK HAS FINALLY DRIED -->
+
+    <article class="song-card">
+
+      <img
+        src="The Ink Finally Dried 1.0.png"
+        class="cover"
+        alt="The Ink Has Finally Dried">
+
+      <div class="song-title">
+        The Ink Has Finally Dried
       </div>
 
-      <div class="controls">
+      <div class="song-artist">
+        ~ Ellsworth Barrett ~
+      </div>
 
-        <button
-          class="control-btn"
-          onclick="skip('audio1',-10)">
-          ↶
-        </button>
+      <div class="player">
 
-        <button
-          id="play1"
-          class="control-btn play-btn"
-          onclick="togglePlay('audio1','play1')">
-          ▶
-        </button>
+        <audio id="audio1" preload="metadata">
+          <source src="ink.mp3" type="audio/mpeg">
+        </audio>
 
-        <button
-          class="control-btn"
-          onclick="skip('audio1',10)">
-          ↷
-        </button>
+        <div class="progress-row">
+
+          <span id="time1">0:00</span>
+
+          <input
+            id="progress1"
+            class="progress"
+            type="range"
+            min="0"
+            max="100"
+            value="0">
+
+          <span id="duration1">--:--</span>
+
+        </div>
+
+        <div class="controls">
+
+          <button
+            class="control"
+            onclick="skip('audio1',-10)">
+            ↶
+          </button>
+
+          <button
+            id="play1"
+            class="control play"
+            onclick="togglePlay('audio1')">
+            ▶
+          </button>
+
+          <button
+            class="control"
+            onclick="skip('audio1',10)">
+            ↷
+          </button>
+
+        </div>
 
       </div>
 
-    </div>
+    </article>
+
+
+
+    <!-- SHE SAW ME BEFORE SHE KNEW ME -->
+
+    <article class="song-card">
+
+      <img
+        src="she-knew-me.png"
+        class="cover"
+        alt="She Saw Me Before She Knew Me">
+
+      <div class="song-title">
+        She Saw Me Before She Knew Me
+      </div>
+
+      <div class="song-artist">
+        ~ Ellsworth Barrett ~
+      </div>
+
+      <div class="player">
+
+        <audio id="audio2" preload="metadata">
+          <source src="she-saw-me.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="progress-row">
+
+          <span id="time2">0:00</span>
+
+          <input
+            id="progress2"
+            class="progress"
+            type="range"
+            min="0"
+            max="100"
+            value="0">
+
+          <span id="duration2">--:--</span>
+
+        </div>
+
+        <div class="controls">
+
+          <button
+            class="control"
+            onclick="skip('audio2',-10)">
+            ↶
+          </button>
+
+          <button
+            id="play2"
+            class="control play"
+            onclick="togglePlay('audio2')">
+            ▶
+          </button>
+
+          <button
+            class="control"
+            onclick="skip('audio2',10)">
+            ↷
+          </button>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- LISTEN ON -->
+
+  <div class="listen-title">
+    LISTEN ON
   </div>
 
+  <div class="links">
 
-  <div class="divider"></div>
+    <a
+      class="service"
+      href="https://open.spotify.com/artist/3UT4RV8hkQFtdRP3pOsziC"
+      target="_blank"
+      rel="noopener">
+      Spotify
+    </a>
 
+    <a
+      class="service"
+      href="https://distrokid.com/hyperfollow/ellsworthbarrett/she-saw-me-before-she-knew-me"
+      target="_blank"
+      rel="noopener">
+      Streaming Links
+    </a>
 
-  <!-- SONG TWO -->
-
-  <div class="song">
-
-    <img
-      class="cover"
-      src="she-knew-me.png"
-      alt="She Saw Me Before She Knew Me">
-
-    <div class="song-title">
-      She Saw Me Before She Knew Me
-    </div>
-
-    <div class="artist">
-      ~ Ellsworth Barrett ~
-    </div>
-
-    <div class="player">
-
-      <audio id="audio2" preload="metadata">
-        <source src="she-saw-me.mp3" type="audio/mpeg">
-      </audio>
-
-      <div class="progress-wrap">
-        <span id="time2">0:00</span>
-
-        <input
-          id="progress2"
-          class="progress"
-          type="range"
-          min="0"
-          max="100"
-          value="0">
-
-        <span id="duration2">--:--</span>
-      </div>
-
-      <div class="controls">
-
-        <button
-          class="control-btn"
-          onclick="skip('audio2',-10)">
-          ↶
-        </button>
-
-        <button
-          id="play2"
-          class="control-btn play-btn"
-          onclick="togglePlay('audio2','play2')">
-          ▶
-        </button>
-
-        <button
-          class="control-btn"
-          onclick="skip('audio2',10)">
-          ↷
-        </button>
-
-      </div>
-
-    </div>
   </div>
-
-
-  <div class="divider"></div>
 
 
   <!-- SHARE / FACEBOOK -->
@@ -299,27 +509,42 @@ body {
   <div class="actions">
 
     <button
-      class="action-btn"
+      class="action"
       onclick="sharePage()">
       Share
     </button>
 
     <a
-      class="action-btn"
+      class="action"
       href="https://www.facebook.com/profile.php?id=61593677165648"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener">
       Facebook
     </a>
 
   </div>
 
 
-  <div class="footer">
-    ALPENGLOW VIEW STUDIOS · POLSON, MONTANA
-  </div>
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+      ALPENGLOW VIEW STUDIOS
+    </div>
+
+    <div class="footer-location">
+      POLSON, MONTANA
+    </div>
+
+    <div class="footer-tag">
+      SONGS · STORIES · SECOND CHANCES
+    </div>
+
+  </footer>
 
 </div>
+
 
 
 <script>
@@ -332,6 +557,7 @@ const songs = [
     time: document.getElementById("time1"),
     duration: document.getElementById("duration1")
   },
+
   {
     audio: document.getElementById("audio2"),
     play: document.getElementById("play2"),
@@ -344,44 +570,49 @@ const songs = [
 
 function formatTime(seconds) {
 
-  if (isNaN(seconds)) return "0:00";
+  if (isNaN(seconds))
+    return "0:00";
 
-  const minutes = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
+  const minutes =
+    Math.floor(seconds / 60);
+
+  const secs =
+    Math.floor(seconds % 60);
 
   return minutes + ":" +
     secs.toString().padStart(2,"0");
 }
 
 
-function togglePlay(audioId, buttonId) {
 
-  const selectedAudio =
-    document.getElementById(audioId);
+function togglePlay(id) {
+
+  const selected =
+    document.getElementById(id);
 
   songs.forEach(song => {
 
-    if (song.audio !== selectedAudio) {
+    if (song.audio !== selected)
       song.audio.pause();
-    }
 
   });
 
-  if (selectedAudio.paused) {
-    selectedAudio.play();
-  } else {
-    selectedAudio.pause();
-  }
+  if (selected.paused)
+    selected.play();
+  else
+    selected.pause();
 }
 
 
-function skip(audioId, seconds) {
+
+function skip(id, seconds) {
 
   const audio =
-    document.getElementById(audioId);
+    document.getElementById(id);
 
   audio.currentTime += seconds;
 }
+
 
 
 songs.forEach(song => {
@@ -389,8 +620,10 @@ songs.forEach(song => {
   song.audio.addEventListener(
     "loadedmetadata",
     () => {
+
       song.duration.textContent =
         formatTime(song.audio.duration);
+
     }
   );
 
@@ -417,7 +650,10 @@ songs.forEach(song => {
   song.audio.addEventListener(
     "play",
     () => {
-      song.play.textContent = "❚❚";
+
+      song.play.textContent =
+        "❚❚";
+
     }
   );
 
@@ -425,7 +661,10 @@ songs.forEach(song => {
   song.audio.addEventListener(
     "pause",
     () => {
-      song.play.textContent = "▶";
+
+      song.play.textContent =
+        "▶";
+
     }
   );
 
@@ -448,28 +687,42 @@ songs.forEach(song => {
 });
 
 
+
 async function sharePage() {
 
-  const data = {
-    title: "Ellsworth Barrett",
+  const shareData = {
+    title:
+      "Ellsworth Barrett",
+
     text:
       "Listen to music by Ellsworth Barrett.",
-    url: window.location.href
+
+    url:
+      window.location.href
   };
+
 
   if (navigator.share) {
 
     try {
-      await navigator.share(data);
+
+      await navigator.share(
+        shareData
+      );
+
     } catch (err) {}
 
-  } else {
+  }
+
+  else {
 
     await navigator.clipboard.writeText(
       window.location.href
     );
 
-    alert("Link copied to clipboard.");
+    alert(
+      "Link copied to clipboard."
+    );
 
   }
 }
