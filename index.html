@@ -13,305 +13,305 @@
 
 body {
   margin: 0;
-  color: #f5f0e6;
-  font-family: Georgia, "Times New Roman", serif;
   background:
-    radial-gradient(circle at top right, rgba(190,105,25,.35), transparent 30%),
-    linear-gradient(180deg, #17314b 0%, #111820 35%, #090909 72%);
+    radial-gradient(circle at top, rgba(130,80,25,.28), transparent 28%),
+    linear-gradient(180deg,#102438 0%,#08121b 42%,#050505 100%);
+  color: #f5efe4;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
 .page {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 900px;
   margin: auto;
-  padding: 28px 22px 45px;
+  padding: 18px 14px 32px;
 }
 
-
-/* ---------- HEADER ---------- */
+/* HEADER */
 
 .header {
-  position: relative;
-  min-height: 185px;
   text-align: center;
-  padding-top: 20px;
+}
+
+.top-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 }
 
 .profile {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 145px;
-  height: 145px;
-  object-fit: cover;
+  width: 105px;
+  height: 105px;
   border-radius: 50%;
-  border: 3px solid #d6a33e;
-  box-shadow: 0 8px 25px rgba(0,0,0,.6);
-}
-
-.artist-name {
-  font-family: cursive;
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 1;
-  margin: 0;
-  font-weight: normal;
-}
-
-.studio {
-  margin-top: 14px;
-  font-size: 17px;
-  letter-spacing: 5px;
-}
-
-.location {
-  color: #d6a33e;
-  font-size: 14px;
-  letter-spacing: 3px;
-  margin-top: 7px;
+  object-fit: cover;
+  border: 3px solid #d7a744;
+  box-shadow: 0 6px 18px rgba(0,0,0,.55);
 }
 
 .tagline {
-  position: absolute;
-  right: 0;
-  top: 8px;
-  width: 145px;
-  color: #e2b651;
+  color: #e2ad45;
   font-family: cursive;
-  font-size: 23px;
-  line-height: 1.15;
+  font-size: 21px;
+  line-height: 1.05;
+  text-align: left;
 }
 
+.artist-name {
+  margin: 10px 0 0;
+  font-family: cursive;
+  font-size: clamp(42px, 12vw, 72px);
+  font-weight: normal;
+  line-height: .95;
+}
 
-/* ---------- SONG GRID ---------- */
+.studio {
+  margin-top: 8px;
+  letter-spacing: 4px;
+  font-size: 13px;
+}
+
+.location {
+  margin-top: 5px;
+  color: #d8a842;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+/* SONGS */
 
 .songs {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
 .song-card {
   text-align: center;
+  min-width: 0;
 }
 
 .cover {
-  display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
+  display: block;
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #c99a39;
-  box-shadow: 0 10px 30px rgba(0,0,0,.7);
+  border-radius: 6px;
+  border: 1.5px solid #c8983c;
+  box-shadow: 0 8px 18px rgba(0,0,0,.55);
 }
 
 .song-title {
-  font-size: 27px;
-  margin-top: 15px;
+  min-height: 50px;
+  margin-top: 9px;
+  padding: 0 3px;
   font-weight: bold;
+  font-size: clamp(15px, 4.3vw, 22px);
+  line-height: 1.08;
 }
 
-.song-artist {
-  color: #e1b34e;
-  font-size: 19px;
-  font-style: italic;
-  margin: 7px 0 14px;
+.play-button {
+  width: 92%;
+  margin: 8px auto 0;
+  padding: 10px 4px;
+  border: 2px solid #d8a23e;
+  border-radius: 30px;
+  background: rgba(10,10,10,.9);
+  color: white;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
-
-/* ---------- PLAYER ---------- */
-
-.player {
-  padding: 7px 5px;
+.play-button:hover {
+  background: #20180b;
 }
 
-.progress-row {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  color: #aaa;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
+/* PROGRESS */
+
+.progress-wrap {
+  margin-top: 9px;
 }
 
 .progress {
-  flex: 1;
-  height: 4px;
-  cursor: pointer;
+  width: 94%;
 }
 
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 12px;
+.time {
+  font-family: Arial,sans-serif;
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 2px;
 }
 
-.control {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid #666;
-  background: #171717;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
+/* LISTEN */
 
-.play {
-  width: 52px;
-  height: 52px;
-  background: #eee;
-  color: #111;
-  border: 2px solid #c99a39;
-}
-
-
-/* ---------- LISTEN ON ---------- */
-
-.listen-title {
-  margin: 45px auto 20px;
+.section-title {
+  margin: 32px 0 14px;
   text-align: center;
-  letter-spacing: 6px;
-  font-size: 13px;
-  color: #ddd;
+  letter-spacing: 5px;
+  font-size: 12px;
 }
 
-.links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+.streaming {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
 .service {
+  display: block;
+  padding: 11px 8px;
+  text-align: center;
+  color: white;
   text-decoration: none;
-  color: #fff;
-  background: #181818;
-  border: 1px solid #9a7734;
-  border-radius: 999px;
-  padding: 10px 17px;
-  font-family: Arial, sans-serif;
+  border: 1px solid #b88a35;
+  border-radius: 30px;
+  background: #111;
+  font-family: Arial,sans-serif;
   font-size: 14px;
 }
 
-.service:hover {
-  background: #292929;
-}
-
-
-/* ---------- ACTIONS ---------- */
+/* ACTIONS */
 
 .actions {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-top: 35px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .action {
-  border: 1px solid #c99a39;
-  border-radius: 999px;
+  border: 1px solid #c99b40;
+  border-radius: 30px;
   background: #111;
   color: white;
-  padding: 11px 25px;
+  padding: 11px 6px;
+  text-align: center;
   text-decoration: none;
-  font-family: Arial, sans-serif;
-  font-size: 15px;
+  font-family: Arial,sans-serif;
+  font-size: 14px;
   cursor: pointer;
 }
 
-
-/* ---------- FOOTER ---------- */
+/* FOOTER */
 
 .footer {
+  margin-top: 30px;
   text-align: center;
-  margin-top: 40px;
 }
 
 .footer-brand {
-  letter-spacing: 4px;
-  font-size: 14px;
+  letter-spacing: 3px;
+  font-size: 12px;
 }
 
 .footer-location {
-  color: #c99a39;
-  letter-spacing: 3px;
-  font-size: 12px;
-  margin-top: 6px;
+  margin-top: 5px;
+  color: #d1a03f;
+  letter-spacing: 2px;
+  font-size: 11px;
 }
 
 .footer-tag {
-  margin-top: 24px;
-  letter-spacing: 7px;
-  font-size: 12px;
-  color: #bbb;
+  margin-top: 20px;
+  color: #aaa;
+  letter-spacing: 4px;
+  font-size: 10px;
 }
 
+/* VERY SMALL PHONES */
 
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 760px) {
+@media (max-width: 360px) {
 
   .page {
-    padding: 20px 14px 35px;
-  }
-
-  .header {
-    padding-top: 0;
-    min-height: auto;
-  }
-
-  .profile {
-    position: static;
-    width: 105px;
-    height: 105px;
-    margin: 0 auto 12px;
-  }
-
-  .tagline {
-    position: static;
-    width: auto;
-    margin: 10px 0;
-    font-size: 20px;
-  }
-
-  .artist-name {
-    font-size: 45px;
-  }
-
-  .studio {
-    font-size: 12px;
-    letter-spacing: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
   }
 
   .songs {
-    grid-template-columns: 1fr;
-    gap: 45px;
-    margin-top: 25px;
+    gap: 8px;
+  }
+
+  .profile {
+    width: 85px;
+    height: 85px;
+  }
+
+  .tagline {
+    font-size: 17px;
   }
 
   .song-title {
-    font-size: 23px;
+    font-size: 14px;
+  }
+
+  .play-button {
+    font-size: 13px;
+  }
+}
+
+/* TABLET / COMPUTER */
+
+@media (min-width: 700px) {
+
+  .page {
+    padding: 28px;
+  }
+
+  .profile {
+    width: 135px;
+    height: 135px;
+  }
+
+  .tagline {
+    font-size: 26px;
+  }
+
+  .songs {
+    gap: 32px;
+  }
+
+  .song-title {
+    font-size: 26px;
+  }
+
+  .play-button {
+    max-width: 260px;
+  }
+
+  .streaming,
+  .actions {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>
 </head>
 
-
 <body>
 
 <div class="page">
 
-
-  <!-- HEADER -->
-
   <header class="header">
 
-    <img
-      src="ellsworth-profile.png"
-      class="profile"
-      alt="Ellsworth Barrett">
+    <div class="top-row">
+
+      <img
+        src="ellsworth-profile.png"
+        class="profile"
+        alt="Ellsworth Barrett">
+
+      <div class="tagline">
+        Music<br>
+        Brings<br>
+        People<br>
+        Together
+      </div>
+
+    </div>
 
     <h1 class="artist-name">
       Ellsworth Barrett
@@ -325,24 +325,14 @@ body {
       POLSON, MONTANA
     </div>
 
-    <div class="tagline">
-      Music<br>
-      Brings<br>
-      People<br>
-      Together
-    </div>
-
   </header>
 
 
-  <!-- TWO SONGS -->
-
   <section class="songs">
 
+    <!-- SONG ONE -->
 
-    <!-- THE INK HAS FINALLY DRIED -->
-
-    <article class="song-card">
+    <div class="song-card">
 
       <img
         src="The Ink Finally Dried 1.0.png"
@@ -353,64 +343,43 @@ body {
         The Ink Has Finally Dried
       </div>
 
-      <div class="song-artist">
-        ~ Ellsworth Barrett ~
-      </div>
+      <audio
+        id="audio1"
+        preload="metadata"
+        src="ink.mp3">
+      </audio>
 
-      <div class="player">
+      <button
+        id="button1"
+        class="play-button"
+        onclick="toggleSong(1)">
+        ▶ PLAY
+      </button>
 
-        <audio id="audio1" preload="metadata">
-          <source src="ink.mp3" type="audio/mpeg">
-        </audio>
+      <div class="progress-wrap">
 
-        <div class="progress-row">
+        <input
+          id="progress1"
+          class="progress"
+          type="range"
+          min="0"
+          max="100"
+          value="0">
 
-          <span id="time1">0:00</span>
-
-          <input
-            id="progress1"
-            class="progress"
-            type="range"
-            min="0"
-            max="100"
-            value="0">
-
-          <span id="duration1">--:--</span>
-
-        </div>
-
-        <div class="controls">
-
-          <button
-            class="control"
-            onclick="skip('audio1',-10)">
-            ↶
-          </button>
-
-          <button
-            id="play1"
-            class="control play"
-            onclick="togglePlay('audio1')">
-            ▶
-          </button>
-
-          <button
-            class="control"
-            onclick="skip('audio1',10)">
-            ↷
-          </button>
-
+        <div
+          id="time1"
+          class="time">
+          0:00 / --:--
         </div>
 
       </div>
 
-    </article>
+    </div>
 
 
+    <!-- SONG TWO -->
 
-    <!-- SHE SAW ME BEFORE SHE KNEW ME -->
-
-    <article class="song-card">
+    <div class="song-card">
 
       <img
         src="she-knew-me.png"
@@ -421,69 +390,47 @@ body {
         She Saw Me Before She Knew Me
       </div>
 
-      <div class="song-artist">
-        ~ Ellsworth Barrett ~
-      </div>
+      <audio
+        id="audio2"
+        preload="metadata"
+        src="she-saw-me.mp3">
+      </audio>
 
-      <div class="player">
+      <button
+        id="button2"
+        class="play-button"
+        onclick="toggleSong(2)">
+        ▶ PLAY
+      </button>
 
-        <audio id="audio2" preload="metadata">
-          <source src="she-saw-me.mp3" type="audio/mpeg">
-        </audio>
+      <div class="progress-wrap">
 
-        <div class="progress-row">
+        <input
+          id="progress2"
+          class="progress"
+          type="range"
+          min="0"
+          max="100"
+          value="0">
 
-          <span id="time2">0:00</span>
-
-          <input
-            id="progress2"
-            class="progress"
-            type="range"
-            min="0"
-            max="100"
-            value="0">
-
-          <span id="duration2">--:--</span>
-
-        </div>
-
-        <div class="controls">
-
-          <button
-            class="control"
-            onclick="skip('audio2',-10)">
-            ↶
-          </button>
-
-          <button
-            id="play2"
-            class="control play"
-            onclick="togglePlay('audio2')">
-            ▶
-          </button>
-
-          <button
-            class="control"
-            onclick="skip('audio2',10)">
-            ↷
-          </button>
-
+        <div
+          id="time2"
+          class="time">
+          0:00 / --:--
         </div>
 
       </div>
 
-    </article>
+    </div>
 
   </section>
 
 
-  <!-- LISTEN ON -->
-
-  <div class="listen-title">
+  <div class="section-title">
     LISTEN ON
   </div>
 
-  <div class="links">
+  <div class="streaming">
 
     <a
       class="service"
@@ -504,8 +451,6 @@ body {
   </div>
 
 
-  <!-- SHARE / FACEBOOK -->
-
   <div class="actions">
 
     <button
@@ -524,8 +469,6 @@ body {
 
   </div>
 
-
-  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -546,32 +489,26 @@ body {
 </div>
 
 
-
 <script>
 
-const songs = [
-  {
-    audio: document.getElementById("audio1"),
-    play: document.getElementById("play1"),
-    progress: document.getElementById("progress1"),
-    time: document.getElementById("time1"),
-    duration: document.getElementById("duration1")
-  },
+const audio1 = document.getElementById("audio1");
+const audio2 = document.getElementById("audio2");
 
-  {
-    audio: document.getElementById("audio2"),
-    play: document.getElementById("play2"),
-    progress: document.getElementById("progress2"),
-    time: document.getElementById("time2"),
-    duration: document.getElementById("duration2")
-  }
-];
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+
+const progress1 = document.getElementById("progress1");
+const progress2 = document.getElementById("progress2");
+
+const time1 = document.getElementById("time1");
+const time2 = document.getElementById("time2");
 
 
 function formatTime(seconds) {
 
-  if (isNaN(seconds))
-    return "0:00";
+  if (!isFinite(seconds)) {
+    return "--:--";
+  }
 
   const minutes =
     Math.floor(seconds / 60);
@@ -584,146 +521,153 @@ function formatTime(seconds) {
 }
 
 
-
-function togglePlay(id) {
+function toggleSong(number) {
 
   const selected =
-    document.getElementById(id);
+    number === 1 ? audio1 : audio2;
 
-  songs.forEach(song => {
+  const other =
+    number === 1 ? audio2 : audio1;
 
-    if (song.audio !== selected)
-      song.audio.pause();
+  other.pause();
 
-  });
-
-  if (selected.paused)
+  if (selected.paused) {
     selected.play();
-  else
+  }
+  else {
     selected.pause();
+  }
 }
 
 
+function updateButtons() {
 
-function skip(id, seconds) {
+  button1.textContent =
+    audio1.paused ? "▶ PLAY" : "❚❚ PAUSE";
 
-  const audio =
-    document.getElementById(id);
-
-  audio.currentTime += seconds;
+  button2.textContent =
+    audio2.paused ? "▶ PLAY" : "❚❚ PAUSE";
 }
 
 
+audio1.addEventListener("play", updateButtons);
+audio1.addEventListener("pause", updateButtons);
 
-songs.forEach(song => {
-
-  song.audio.addEventListener(
-    "loadedmetadata",
-    () => {
-
-      song.duration.textContent =
-        formatTime(song.audio.duration);
-
-    }
-  );
+audio2.addEventListener("play", updateButtons);
+audio2.addEventListener("pause", updateButtons);
 
 
-  song.audio.addEventListener(
-    "timeupdate",
-    () => {
+audio1.addEventListener("timeupdate", function() {
 
-      if (song.audio.duration) {
+  if (audio1.duration) {
 
-        song.progress.value =
-          (song.audio.currentTime /
-           song.audio.duration) * 100;
+    progress1.value =
+      audio1.currentTime /
+      audio1.duration * 100;
 
-      }
-
-      song.time.textContent =
-        formatTime(song.audio.currentTime);
-
-    }
-  );
-
-
-  song.audio.addEventListener(
-    "play",
-    () => {
-
-      song.play.textContent =
-        "❚❚";
-
-    }
-  );
-
-
-  song.audio.addEventListener(
-    "pause",
-    () => {
-
-      song.play.textContent =
-        "▶";
-
-    }
-  );
-
-
-  song.progress.addEventListener(
-    "input",
-    () => {
-
-      if (song.audio.duration) {
-
-        song.audio.currentTime =
-          (song.progress.value / 100) *
-          song.audio.duration;
-
-      }
-
-    }
-  );
+    time1.textContent =
+      formatTime(audio1.currentTime) +
+      " / " +
+      formatTime(audio1.duration);
+  }
 
 });
 
+
+audio2.addEventListener("timeupdate", function() {
+
+  if (audio2.duration) {
+
+    progress2.value =
+      audio2.currentTime /
+      audio2.duration * 100;
+
+    time2.textContent =
+      formatTime(audio2.currentTime) +
+      " / " +
+      formatTime(audio2.duration);
+  }
+
+});
+
+
+audio1.addEventListener("loadedmetadata", function() {
+
+  time1.textContent =
+    "0:00 / " +
+    formatTime(audio1.duration);
+
+});
+
+
+audio2.addEventListener("loadedmetadata", function() {
+
+  time2.textContent =
+    "0:00 / " +
+    formatTime(audio2.duration);
+
+});
+
+
+progress1.addEventListener("input", function() {
+
+  if (audio1.duration) {
+
+    audio1.currentTime =
+      progress1.value / 100 *
+      audio1.duration;
+  }
+
+});
+
+
+progress2.addEventListener("input", function() {
+
+  if (audio2.duration) {
+
+    audio2.currentTime =
+      progress2.value / 100 *
+      audio2.duration;
+  }
+
+});
 
 
 async function sharePage() {
 
   const shareData = {
-    title:
-      "Ellsworth Barrett",
-
-    text:
-      "Listen to music by Ellsworth Barrett.",
-
-    url:
-      window.location.href
+    title: "Ellsworth Barrett",
+    text: "Listen to music by Ellsworth Barrett.",
+    url: window.location.href
   };
-
 
   if (navigator.share) {
 
     try {
-
-      await navigator.share(
-        shareData
-      );
-
-    } catch (err) {}
+      await navigator.share(shareData);
+    }
+    catch (e) {}
 
   }
-
   else {
 
-    await navigator.clipboard.writeText(
-      window.location.href
-    );
+    try {
 
-    alert(
-      "Link copied to clipboard."
-    );
+      await navigator.clipboard.writeText(
+        window.location.href
+      );
 
+      alert(
+        "Link copied to clipboard."
+      );
+
+    }
+    catch (e) {
+
+      alert(
+        window.location.href
+      );
+    }
   }
 }
 
