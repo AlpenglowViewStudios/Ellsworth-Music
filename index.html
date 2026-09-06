@@ -18,10 +18,6 @@
       box-sizing: border-box;
     }
 
-    html {
-      min-height: 100%;
-    }
-
     body {
       margin: 0;
       min-height: 100vh;
@@ -34,16 +30,17 @@
         serif;
 
       background:
-        linear-gradient(
-          rgba(3, 10, 15, .20),
-          rgba(3, 8, 12, .46)
+        radial-gradient(
+          circle at top,
+          rgba(88, 63, 28, .18),
+          transparent 28%
         ),
-        url("sunset.png");
-
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+        linear-gradient(
+          180deg,
+          #13283a 0%,
+          #0b1722 38%,
+          #05080b 100%
+        );
     }
 
 
@@ -72,18 +69,15 @@
 
       background:
         linear-gradient(
-          rgba(0, 10, 18, .18),
-          rgba(0, 8, 14, .30)
+          rgba(7, 18, 28, .72),
+          rgba(3, 10, 16, .88)
         );
 
       border:
         1px solid rgba(222, 170, 70, .45);
 
       box-shadow:
-        0 12px 34px rgba(0,0,0,.25);
-
-      backdrop-filter:
-        blur(1px);
+        0 12px 34px rgba(0,0,0,.36);
     }
 
 
@@ -109,7 +103,7 @@
         3px solid #d9a640;
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,.5);
+        0 8px 25px rgba(0,0,0,.55);
     }
 
 
@@ -125,9 +119,6 @@
       line-height: 1.08;
 
       text-align: left;
-
-      text-shadow:
-        0 2px 6px rgba(0,0,0,.8);
     }
 
 
@@ -151,9 +142,6 @@
       font-weight: normal;
 
       line-height: .95;
-
-      text-shadow:
-        0 4px 12px rgba(0,0,0,.8);
     }
 
 
@@ -165,9 +153,6 @@
       font-size: 13px;
 
       letter-spacing: 4px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -181,9 +166,6 @@
       font-size: 12px;
 
       letter-spacing: 3px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -197,10 +179,7 @@
       letter-spacing: 3px;
 
       color:
-        rgba(255,255,255,.90);
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
+        rgba(255,255,255,.82);
     }
 
 
@@ -236,15 +215,15 @@
 
       background:
         linear-gradient(
-          rgba(4,10,14,.35),
-          rgba(1,4,7,.48)
+          rgba(4,10,14,.83),
+          rgba(1,4,7,.94)
         );
 
       border:
-        1px solid rgba(215,163,61,.6);
+        1px solid rgba(215,163,61,.58);
 
       box-shadow:
-        0 10px 28px rgba(0,0,0,.38);
+        0 10px 28px rgba(0,0,0,.48);
     }
 
 
@@ -263,7 +242,7 @@
         1px solid #c79535;
 
       box-shadow:
-        0 7px 20px rgba(0,0,0,.45);
+        0 7px 20px rgba(0,0,0,.5);
     }
 
 
@@ -288,9 +267,6 @@
       font-weight: bold;
 
       line-height: 1.08;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.9);
     }
 
 
@@ -314,7 +290,7 @@
       border-radius: 30px;
 
       background:
-        rgba(5,5,5,.78);
+        rgba(7,7,7,.95);
 
       color: #fff;
 
@@ -323,10 +299,6 @@
       letter-spacing: 1px;
 
       cursor: pointer;
-
-      box-shadow:
-        inset 0 0 12px
-        rgba(218,161,60,.08);
     }
 
 
@@ -351,16 +323,13 @@
     .time {
       margin-top: 2px;
 
-      color: #ddd;
+      color: #bbb;
 
       font-family:
         Arial,
         sans-serif;
 
       font-size: 10px;
-
-      text-shadow:
-        0 1px 3px rgba(0,0,0,.8);
     }
 
 
@@ -378,9 +347,6 @@
       font-size: 12px;
 
       letter-spacing: 5px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.9);
     }
 
 
@@ -390,16 +356,13 @@
       border-radius: 16px;
 
       background:
-        rgba(0,8,12,.34);
+        rgba(2,8,12,.86);
 
       border:
         1px solid rgba(210,157,55,.45);
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,.3);
-
-      backdrop-filter:
-        blur(1px);
+        0 8px 25px rgba(0,0,0,.36);
     }
 
 
@@ -430,7 +393,7 @@
         1px solid #b98b36;
 
       background:
-        rgba(8,8,8,.72);
+        #111;
 
       color: white;
 
@@ -470,7 +433,7 @@
       border-radius: 30px;
 
       background:
-        rgba(8,8,8,.72);
+        #111;
 
       color: white;
 
@@ -498,15 +461,7 @@
       padding:
         18px 10px;
 
-      border-radius: 16px;
-
       text-align: center;
-
-      background:
-        linear-gradient(
-          rgba(0,5,8,.16),
-          rgba(0,5,8,.34)
-        );
     }
 
 
@@ -514,9 +469,6 @@
       font-size: 12px;
 
       letter-spacing: 4px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -528,23 +480,17 @@
       font-size: 11px;
 
       letter-spacing: 3px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
     }
 
 
     .footer-tag {
       margin-top: 18px;
 
-      color: #ddd;
+      color: #aaa;
 
       font-size: 10px;
 
       letter-spacing: 4px;
-
-      text-shadow:
-        0 2px 5px rgba(0,0,0,.8);
     }
 
 
@@ -553,14 +499,6 @@
        ========================= */
 
     @media (max-width: 520px) {
-
-      body {
-        background-position:
-          center top;
-
-        background-attachment:
-          scroll;
-      }
 
       .page {
         padding:
