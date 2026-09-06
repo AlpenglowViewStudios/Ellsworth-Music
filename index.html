@@ -1,301 +1,752 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Ellsworth Barrett | Alpenglow View Studios</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>
+    Ellsworth Barrett | Alpenglow View Studios
+  </title>
 
-body {
-  margin: 0;
-  background:
-    radial-gradient(circle at top, rgba(130,80,25,.28), transparent 28%),
-    linear-gradient(180deg,#102438 0%,#08121b 42%,#050505 100%);
-  color: #f5efe4;
-  font-family: Georgia, "Times New Roman", serif;
-}
 
-.page {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  padding: 18px 14px 32px;
-}
+  <style>
 
-/* HEADER */
+    * {
+      box-sizing: border-box;
+    }
 
-.header {
-  text-align: center;
-}
 
-.top-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-}
+    html {
+      min-height: 100%;
+    }
 
-.profile {
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #d7a744;
-  box-shadow: 0 6px 18px rgba(0,0,0,.55);
-}
 
-.tagline {
-  color: #e2ad45;
-  font-family: cursive;
-  font-size: 21px;
-  line-height: 1.05;
-  text-align: left;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
 
-.artist-name {
-  margin: 10px 0 0;
-  font-family: cursive;
-  font-size: clamp(42px, 12vw, 72px);
-  font-weight: normal;
-  line-height: .95;
-}
+      color: #fff8ea;
 
-.studio {
-  margin-top: 8px;
-  letter-spacing: 4px;
-  font-size: 13px;
-}
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-.location {
-  margin-top: 5px;
-  color: #d8a842;
-  letter-spacing: 3px;
-  font-size: 12px;
-}
+      background:
+        linear-gradient(
+          rgba(3, 10, 15, .42),
+          rgba(3, 8, 12, .82)
+        ),
+        url("sunset.png");
 
-/* SONGS */
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-.songs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 24px;
-}
 
-.song-card {
-  text-align: center;
-  min-width: 0;
-}
+    .page {
+      width: 100%;
+      max-width: 1000px;
 
-.cover {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  display: block;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1.5px solid #c8983c;
-  box-shadow: 0 8px 18px rgba(0,0,0,.55);
-}
+      margin: 0 auto;
 
-.song-title {
-  min-height: 50px;
-  margin-top: 9px;
-  padding: 0 3px;
-  font-weight: bold;
-  font-size: clamp(15px, 4.3vw, 22px);
-  line-height: 1.08;
-}
+      padding:
+        22px 14px
+        38px;
+    }
 
-.play-button {
-  width: 92%;
-  margin: 8px auto 0;
-  padding: 10px 4px;
-  border: 2px solid #d8a23e;
-  border-radius: 30px;
-  background: rgba(10,10,10,.9);
-  color: white;
-  font-size: 15px;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
 
-.play-button:hover {
-  background: #20180b;
-}
 
-/* PROGRESS */
+    /* =========================
+       TOP ARTIST AREA
+       ========================= */
 
-.progress-wrap {
-  margin-top: 9px;
-}
 
-.progress {
-  width: 94%;
-}
+    .hero {
+      padding:
+        16px 14px
+        20px;
 
-.time {
-  font-family: Arial,sans-serif;
-  font-size: 10px;
-  color: #aaa;
-  margin-top: 2px;
-}
+      border-radius: 18px;
 
-/* LISTEN */
+      background:
+        linear-gradient(
+          rgba(0, 10, 18, .54),
+          rgba(0, 8, 14, .74)
+        );
 
-.section-title {
-  margin: 32px 0 14px;
-  text-align: center;
-  letter-spacing: 5px;
-  font-size: 12px;
-}
+      border:
+        1px solid
+        rgba(222, 170, 70, .45);
 
-.streaming {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
+      box-shadow:
+        0 12px 34px
+        rgba(0,0,0,.45);
 
-.service {
-  display: block;
-  padding: 11px 8px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  border: 1px solid #b88a35;
-  border-radius: 30px;
-  background: #111;
-  font-family: Arial,sans-serif;
-  font-size: 14px;
-}
+      backdrop-filter:
+        blur(3px);
+    }
 
-/* ACTIONS */
 
-.actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 14px;
-}
+    .top-row {
+      display: flex;
 
-.action {
-  border: 1px solid #c99b40;
-  border-radius: 30px;
-  background: #111;
-  color: white;
-  padding: 11px 6px;
-  text-align: center;
-  text-decoration: none;
-  font-family: Arial,sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-}
+      justify-content: center;
+      align-items: center;
 
-/* FOOTER */
+      gap: 20px;
+    }
 
-.footer {
-  margin-top: 30px;
-  text-align: center;
-}
 
-.footer-brand {
-  letter-spacing: 3px;
-  font-size: 12px;
-}
+    .profile {
+      width: 110px;
+      height: 110px;
 
-.footer-location {
-  margin-top: 5px;
-  color: #d1a03f;
-  letter-spacing: 2px;
-  font-size: 11px;
-}
+      object-fit: cover;
 
-.footer-tag {
-  margin-top: 20px;
-  color: #aaa;
-  letter-spacing: 4px;
-  font-size: 10px;
-}
+      border-radius: 50%;
 
-/* VERY SMALL PHONES */
+      border:
+        3px solid
+        #d9a640;
 
-@media (max-width: 360px) {
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.6);
+    }
 
-  .page {
-    padding-left: 9px;
-    padding-right: 9px;
-  }
 
-  .songs {
-    gap: 8px;
-  }
+    .tagline {
+      color:
+        #e8b757;
 
-  .profile {
-    width: 85px;
-    height: 85px;
-  }
+      font-family:
+        "Brush Script MT",
+        cursive;
 
-  .tagline {
-    font-size: 17px;
-  }
+      font-size: 23px;
 
-  .song-title {
-    font-size: 14px;
-  }
+      line-height: 1.08;
 
-  .play-button {
-    font-size: 13px;
-  }
-}
+      text-align: left;
 
-/* TABLET / COMPUTER */
+      text-shadow:
+        0 2px 6px
+        rgba(0,0,0,.8);
+    }
 
-@media (min-width: 700px) {
 
-  .page {
-    padding: 28px;
-  }
+    .artist-name {
+      margin:
+        12px 0 0;
 
-  .profile {
-    width: 135px;
-    height: 135px;
-  }
+      text-align: center;
 
-  .tagline {
-    font-size: 26px;
-  }
+      font-family:
+        "Brush Script MT",
+        cursive;
 
-  .songs {
-    gap: 32px;
-  }
+      font-size:
+        clamp(
+          45px,
+          12vw,
+          82px
+        );
 
-  .song-title {
-    font-size: 26px;
-  }
+      font-weight: normal;
 
-  .play-button {
-    max-width: 260px;
-  }
+      line-height: .95;
 
-  .streaming,
-  .actions {
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-</style>
+      text-shadow:
+        0 4px 12px
+        rgba(0,0,0,.8);
+    }
+
+
+    .studio {
+      margin-top: 10px;
+
+      text-align: center;
+
+      font-size: 13px;
+
+      letter-spacing: 4px;
+    }
+
+
+    .location {
+      margin-top: 5px;
+
+      text-align: center;
+
+      color:
+        #e1ad4b;
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+    }
+
+
+    .motto {
+      margin-top: 13px;
+
+      text-align: center;
+
+      font-size: 12px;
+
+      letter-spacing: 3px;
+
+      color:
+        rgba(255,255,255,.82);
+    }
+
+
+
+    /* =========================
+       SONG CARDS
+       ========================= */
+
+
+    .songs {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0, 1fr)
+        );
+
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+
+    .song-card {
+      min-width: 0;
+
+      padding:
+        8px 8px
+        12px;
+
+      border-radius: 14px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(4,10,14,.83),
+          rgba(1,4,7,.92)
+        );
+
+      border:
+        1px solid
+        rgba(215,163,61,.6);
+
+      box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.55);
+    }
+
+
+    .cover {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+
+      border-radius: 8px;
+
+      border:
+        1px solid
+        #c79535;
+
+      box-shadow:
+        0 7px 20px
+        rgba(0,0,0,.5);
+    }
+
+
+    .song-title {
+      min-height: 52px;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      padding:
+        6px 2px 0;
+
+      font-size:
+        clamp(
+          15px,
+          4.2vw,
+          23px
+        );
+
+      font-weight: bold;
+
+      line-height: 1.08;
+
+      text-shadow:
+        0 2px 5px
+        rgba(0,0,0,.8);
+    }
+
+
+
+    /* =========================
+       AUDIO PLAYER
+       ========================= */
+
+
+    .play-button {
+      width: 94%;
+
+      margin:
+        7px auto
+        0;
+
+      padding:
+        11px 4px;
+
+      border:
+        2px solid
+        #dba642;
+
+      border-radius: 30px;
+
+      background:
+        rgba(5,5,5,.92);
+
+      color:
+        #fff;
+
+      font-size: 14px;
+
+      letter-spacing: 1px;
+
+      cursor: pointer;
+
+      box-shadow:
+        inset 0 0 12px
+        rgba(218,161,60,.08);
+    }
+
+
+    .play-button:active {
+      transform:
+        scale(.98);
+    }
+
+
+    .progress-wrap {
+      margin-top: 8px;
+    }
+
+
+    .progress {
+      width: 94%;
+
+      accent-color:
+        #d9a442;
+    }
+
+
+    .time {
+      margin-top: 2px;
+
+      color:
+        #bbb;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 10px;
+    }
+
+
+
+    /* =========================
+       LISTEN / LINKS
+       ========================= */
+
+
+    .section-title {
+      margin:
+        30px 0
+        13px;
+
+      text-align: center;
+
+      font-size: 12px;
+
+      letter-spacing: 5px;
+
+      text-shadow:
+        0 2px 5px
+        rgba(0,0,0,.8);
+    }
+
+
+    .links-panel {
+      padding: 16px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(0,8,12,.72);
+
+      border:
+        1px solid
+        rgba(210,157,55,.45);
+
+      box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.4);
+
+      backdrop-filter:
+        blur(4px);
+    }
+
+
+    .streaming {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 10px;
+    }
+
+
+    .service {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+
+      padding:
+        10px 8px;
+
+      border-radius: 30px;
+
+      border:
+        1px solid
+        #b98b36;
+
+      background:
+        rgba(8,8,8,.9);
+
+      color: white;
+
+      text-decoration: none;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 14px;
+    }
+
+
+    .actions {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 12px;
+    }
+
+
+    .action {
+      min-height: 46px;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      border:
+        1px solid
+        #d3a043;
+
+      border-radius: 30px;
+
+      background:
+        rgba(8,8,8,.9);
+
+      color: white;
+
+      text-align: center;
+
+      text-decoration: none;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 14px;
+
+      cursor: pointer;
+    }
+
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+
+    .footer {
+      margin-top: 28px;
+
+      padding:
+        18px 10px;
+
+      border-radius: 16px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(0,5,8,.3),
+          rgba(0,5,8,.8)
+        );
+    }
+
+
+    .footer-brand {
+      font-size: 12px;
+
+      letter-spacing: 4px;
+    }
+
+
+    .footer-location {
+      margin-top: 6px;
+
+      color:
+        #d9a544;
+
+      font-size: 11px;
+
+      letter-spacing: 3px;
+    }
+
+
+    .footer-tag {
+      margin-top: 18px;
+
+      color:
+        #ccc;
+
+      font-size: 10px;
+
+      letter-spacing: 4px;
+    }
+
+
+
+    /* =========================
+       PHONE
+       ========================= */
+
+
+    @media
+    (max-width: 520px) {
+
+      body {
+        background-position:
+          center top;
+
+        background-attachment:
+          scroll;
+      }
+
+
+      .page {
+        padding:
+          12px 10px
+          26px;
+      }
+
+
+      .hero {
+        padding:
+          12px 10px
+          16px;
+      }
+
+
+      .profile {
+        width: 95px;
+        height: 95px;
+      }
+
+
+      .tagline {
+        font-size: 20px;
+      }
+
+
+      .artist-name {
+        font-size:
+          clamp(
+            43px,
+            13vw,
+            60px
+          );
+      }
+
+
+      .studio {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+      }
+
+
+      .location {
+        font-size: 10px;
+      }
+
+
+      .motto {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+      }
+
+
+      .songs {
+        gap: 8px;
+      }
+
+
+      .song-card {
+        padding:
+          6px 6px
+          10px;
+      }
+
+
+      .song-title {
+        min-height: 48px;
+
+        font-size:
+          14px;
+      }
+
+
+      .play-button {
+        width: 96%;
+
+        font-size: 13px;
+      }
+    }
+
+
+
+    /* =========================
+       TABLET
+       ========================= */
+
+
+    @media
+    (min-width: 700px) {
+
+      .page {
+        padding:
+          30px 28px
+          45px;
+      }
+
+
+      .hero {
+        padding:
+          25px 20px
+          28px;
+      }
+
+
+      .profile {
+        width: 140px;
+        height: 140px;
+      }
+
+
+      .tagline {
+        font-size: 29px;
+      }
+
+
+      .songs {
+        gap: 26px;
+
+        margin-top: 28px;
+      }
+
+
+      .song-card {
+        padding:
+          12px 12px
+          18px;
+      }
+
+
+      .song-title {
+        font-size: 25px;
+      }
+
+
+      .play-button {
+        max-width: 260px;
+      }
+
+
+      .links-panel {
+        max-width: 620px;
+
+        margin:
+          0 auto;
+      }
+    }
+
+  </style>
+
 </head>
+
+
 
 <body>
 
 <div class="page">
 
-  <header class="header">
+
+  <!-- =======================
+       ARTIST HEADER
+       ======================= -->
+
+
+  <header class="hero">
 
     <div class="top-row">
 
@@ -303,6 +754,7 @@ body {
         src="ellsworth-profile.png"
         class="profile"
         alt="Ellsworth Barrett">
+
 
       <div class="tagline">
         Music<br>
@@ -313,35 +765,53 @@ body {
 
     </div>
 
+
     <h1 class="artist-name">
       Ellsworth Barrett
     </h1>
+
 
     <div class="studio">
       ALPENGLOW VIEW STUDIOS
     </div>
 
+
     <div class="location">
       POLSON, MONTANA
+    </div>
+
+
+    <div class="motto">
+      SONGS · STORIES · SECOND CHANCES
     </div>
 
   </header>
 
 
+
+  <!-- =======================
+       SONGS
+       ======================= -->
+
+
   <section class="songs">
 
-    <!-- SONG ONE -->
 
-    <div class="song-card">
+    <!-- SONG 1 -->
+
+
+    <article class="song-card">
 
       <img
         src="The Ink Finally Dried 1.0.png"
         class="cover"
         alt="The Ink Has Finally Dried">
 
+
       <div class="song-title">
         The Ink Has Finally Dried
       </div>
+
 
       <audio
         id="audio1"
@@ -349,12 +819,14 @@ body {
         src="ink.mp3">
       </audio>
 
+
       <button
         id="button1"
         class="play-button"
         onclick="toggleSong(1)">
         ▶ PLAY
       </button>
+
 
       <div class="progress-wrap">
 
@@ -366,29 +838,36 @@ body {
           max="100"
           value="0">
 
+
         <div
           id="time1"
           class="time">
+
           0:00 / --:--
+
         </div>
 
       </div>
 
-    </div>
+    </article>
 
 
-    <!-- SONG TWO -->
 
-    <div class="song-card">
+    <!-- SONG 2 -->
+
+
+    <article class="song-card">
 
       <img
         src="she-knew-me.png"
         class="cover"
         alt="She Saw Me Before She Knew Me">
 
+
       <div class="song-title">
         She Saw Me Before She Knew Me
       </div>
+
 
       <audio
         id="audio2"
@@ -396,12 +875,14 @@ body {
         src="she-saw-me.mp3">
       </audio>
 
+
       <button
         id="button2"
         class="play-button"
         onclick="toggleSong(2)">
         ▶ PLAY
       </button>
+
 
       <div class="progress-wrap">
 
@@ -413,265 +894,543 @@ body {
           max="100"
           value="0">
 
+
         <div
           id="time2"
           class="time">
+
           0:00 / --:--
+
         </div>
 
       </div>
 
-    </div>
+    </article>
 
   </section>
+
+
+
+  <!-- =======================
+       LISTEN
+       ======================= -->
 
 
   <div class="section-title">
     LISTEN ON
   </div>
 
-  <div class="streaming">
 
-    <a
-      class="service"
-      href="https://open.spotify.com/artist/3UT4RV8hkQFtdRP3pOsziC"
-      target="_blank"
-      rel="noopener">
-      Spotify
-    </a>
+  <div class="links-panel">
 
-    <a
-      class="service"
-      href="https://distrokid.com/hyperfollow/ellsworthbarrett/she-saw-me-before-she-knew-me"
-      target="_blank"
-      rel="noopener">
-      Streaming Links
-    </a>
+
+    <div class="streaming">
+
+
+      <a
+        class="service"
+        href="https://open.spotify.com/artist/3UT4RV8hkQFtdRP3pOsziC"
+        target="_blank"
+        rel="noopener">
+
+        Spotify
+
+      </a>
+
+
+      <a
+        class="service"
+        href="https://distrokid.com/hyperfollow/ellsworthbarrett/she-saw-me-before-she-knew-me"
+        target="_blank"
+        rel="noopener">
+
+        Streaming Links
+
+      </a>
+
+    </div>
+
+
+
+    <div class="actions">
+
+
+      <button
+        class="action"
+        onclick="sharePage()">
+
+        Share
+
+      </button>
+
+
+      <a
+        class="action"
+        href="https://www.facebook.com/profile.php?id=61593677165648"
+        target="_blank"
+        rel="noopener">
+
+        Facebook
+
+      </a>
+
+    </div>
 
   </div>
 
 
-  <div class="actions">
 
-    <button
-      class="action"
-      onclick="sharePage()">
-      Share
-    </button>
-
-    <a
-      class="action"
-      href="https://www.facebook.com/profile.php?id=61593677165648"
-      target="_blank"
-      rel="noopener">
-      Facebook
-    </a>
-
-  </div>
+  <!-- =======================
+       FOOTER
+       ======================= -->
 
 
   <footer class="footer">
+
 
     <div class="footer-brand">
       ALPENGLOW VIEW STUDIOS
     </div>
 
+
     <div class="footer-location">
       POLSON, MONTANA
     </div>
 
+
     <div class="footer-tag">
-      SONGS · STORIES · SECOND CHANCES
+      SCAN · LISTEN · DISCOVER
     </div>
 
+
   </footer>
+
 
 </div>
 
 
+
 <script>
 
-const audio1 = document.getElementById("audio1");
-const audio2 = document.getElementById("audio2");
 
-const button1 = document.getElementById("button1");
-const button2 = document.getElementById("button2");
-
-const progress1 = document.getElementById("progress1");
-const progress2 = document.getElementById("progress2");
-
-const time1 = document.getElementById("time1");
-const time2 = document.getElementById("time2");
+  const audio1 =
+    document.getElementById(
+      "audio1"
+    );
 
 
-function formatTime(seconds) {
-
-  if (!isFinite(seconds)) {
-    return "--:--";
-  }
-
-  const minutes =
-    Math.floor(seconds / 60);
-
-  const secs =
-    Math.floor(seconds % 60);
-
-  return minutes + ":" +
-    secs.toString().padStart(2,"0");
-}
+  const audio2 =
+    document.getElementById(
+      "audio2"
+    );
 
 
-function toggleSong(number) {
-
-  const selected =
-    number === 1 ? audio1 : audio2;
-
-  const other =
-    number === 1 ? audio2 : audio1;
-
-  other.pause();
-
-  if (selected.paused) {
-    selected.play();
-  }
-  else {
-    selected.pause();
-  }
-}
+  const button1 =
+    document.getElementById(
+      "button1"
+    );
 
 
-function updateButtons() {
-
-  button1.textContent =
-    audio1.paused ? "▶ PLAY" : "❚❚ PAUSE";
-
-  button2.textContent =
-    audio2.paused ? "▶ PLAY" : "❚❚ PAUSE";
-}
+  const button2 =
+    document.getElementById(
+      "button2"
+    );
 
 
-audio1.addEventListener("play", updateButtons);
-audio1.addEventListener("pause", updateButtons);
-
-audio2.addEventListener("play", updateButtons);
-audio2.addEventListener("pause", updateButtons);
-
-
-audio1.addEventListener("timeupdate", function() {
-
-  if (audio1.duration) {
-
-    progress1.value =
-      audio1.currentTime /
-      audio1.duration * 100;
-
-    time1.textContent =
-      formatTime(audio1.currentTime) +
-      " / " +
-      formatTime(audio1.duration);
-  }
-
-});
+  const progress1 =
+    document.getElementById(
+      "progress1"
+    );
 
 
-audio2.addEventListener("timeupdate", function() {
-
-  if (audio2.duration) {
-
-    progress2.value =
-      audio2.currentTime /
-      audio2.duration * 100;
-
-    time2.textContent =
-      formatTime(audio2.currentTime) +
-      " / " +
-      formatTime(audio2.duration);
-  }
-
-});
+  const progress2 =
+    document.getElementById(
+      "progress2"
+    );
 
 
-audio1.addEventListener("loadedmetadata", function() {
-
-  time1.textContent =
-    "0:00 / " +
-    formatTime(audio1.duration);
-
-});
+  const time1 =
+    document.getElementById(
+      "time1"
+    );
 
 
-audio2.addEventListener("loadedmetadata", function() {
-
-  time2.textContent =
-    "0:00 / " +
-    formatTime(audio2.duration);
-
-});
+  const time2 =
+    document.getElementById(
+      "time2"
+    );
 
 
-progress1.addEventListener("input", function() {
 
-  if (audio1.duration) {
+  function formatTime(
+    seconds
+  ) {
 
-    audio1.currentTime =
-      progress1.value / 100 *
-      audio1.duration;
-  }
+    if (
+      !isFinite(
+        seconds
+      )
+    ) {
 
-});
+      return "--:--";
 
-
-progress2.addEventListener("input", function() {
-
-  if (audio2.duration) {
-
-    audio2.currentTime =
-      progress2.value / 100 *
-      audio2.duration;
-  }
-
-});
-
-
-async function sharePage() {
-
-  const shareData = {
-    title: "Ellsworth Barrett",
-    text: "Listen to music by Ellsworth Barrett.",
-    url: window.location.href
-  };
-
-  if (navigator.share) {
-
-    try {
-      await navigator.share(shareData);
     }
-    catch (e) {}
+
+
+    const minutes =
+      Math.floor(
+        seconds / 60
+      );
+
+
+    const secs =
+      Math.floor(
+        seconds % 60
+      );
+
+
+    return (
+      minutes +
+      ":" +
+      secs
+        .toString()
+        .padStart(
+          2,
+          "0"
+        )
+    );
 
   }
-  else {
 
-    try {
 
-      await navigator.clipboard.writeText(
+
+  function toggleSong(
+    number
+  ) {
+
+
+    const selected =
+      number === 1
+      ? audio1
+      : audio2;
+
+
+    const other =
+      number === 1
+      ? audio2
+      : audio1;
+
+
+    other.pause();
+
+
+    if (
+      selected.paused
+    ) {
+
+      selected.play();
+
+    }
+
+    else {
+
+      selected.pause();
+
+    }
+
+  }
+
+
+
+  function updateButtons() {
+
+
+    button1.textContent =
+      audio1.paused
+
+      ? "▶ PLAY"
+
+      : "❚❚ PAUSE";
+
+
+    button2.textContent =
+      audio2.paused
+
+      ? "▶ PLAY"
+
+      : "❚❚ PAUSE";
+
+  }
+
+
+
+  audio1.addEventListener(
+    "play",
+    updateButtons
+  );
+
+
+  audio1.addEventListener(
+    "pause",
+    updateButtons
+  );
+
+
+  audio2.addEventListener(
+    "play",
+    updateButtons
+  );
+
+
+  audio2.addEventListener(
+    "pause",
+    updateButtons
+  );
+
+
+
+  audio1.addEventListener(
+    "timeupdate",
+    function() {
+
+
+      if (
+        audio1.duration
+      ) {
+
+
+        progress1.value =
+          audio1.currentTime /
+          audio1.duration *
+          100;
+
+
+        time1.textContent =
+          formatTime(
+            audio1.currentTime
+          )
+
+          +
+
+          " / "
+
+          +
+
+          formatTime(
+            audio1.duration
+          );
+
+      }
+
+    }
+  );
+
+
+
+  audio2.addEventListener(
+    "timeupdate",
+    function() {
+
+
+      if (
+        audio2.duration
+      ) {
+
+
+        progress2.value =
+          audio2.currentTime /
+          audio2.duration *
+          100;
+
+
+        time2.textContent =
+          formatTime(
+            audio2.currentTime
+          )
+
+          +
+
+          " / "
+
+          +
+
+          formatTime(
+            audio2.duration
+          );
+
+      }
+
+    }
+  );
+
+
+
+  audio1.addEventListener(
+    "loadedmetadata",
+    function() {
+
+
+      time1.textContent =
+
+        "0:00 / "
+
+        +
+
+        formatTime(
+          audio1.duration
+        );
+
+    }
+  );
+
+
+
+  audio2.addEventListener(
+    "loadedmetadata",
+    function() {
+
+
+      time2.textContent =
+
+        "0:00 / "
+
+        +
+
+        formatTime(
+          audio2.duration
+        );
+
+    }
+  );
+
+
+
+  progress1.addEventListener(
+    "input",
+    function() {
+
+
+      if (
+        audio1.duration
+      ) {
+
+
+        audio1.currentTime =
+
+          progress1.value /
+          100 *
+
+          audio1.duration;
+
+      }
+
+    }
+  );
+
+
+
+  progress2.addEventListener(
+    "input",
+    function() {
+
+
+      if (
+        audio2.duration
+      ) {
+
+
+        audio2.currentTime =
+
+          progress2.value /
+          100 *
+
+          audio2.duration;
+
+      }
+
+    }
+  );
+
+
+
+  async function sharePage() {
+
+
+    const shareData = {
+
+      title:
+        "Ellsworth Barrett",
+
+      text:
+        "Listen to music by Ellsworth Barrett.",
+
+      url:
         window.location.href
-      );
 
-      alert(
-        "Link copied to clipboard."
-      );
+    };
+
+
+    if (
+      navigator.share
+    ) {
+
+
+      try {
+
+        await navigator.share(
+          shareData
+        );
+
+      }
+
+      catch (
+        error
+      ) {
+
+      }
 
     }
-    catch (e) {
 
-      alert(
-        window.location.href
-      );
+
+    else {
+
+
+      try {
+
+
+        await navigator
+          .clipboard
+          .writeText(
+            window.location.href
+          );
+
+
+        alert(
+          "Link copied to clipboard."
+        );
+
+      }
+
+
+      catch (
+        error
+      ) {
+
+
+        alert(
+          window.location.href
+        );
+
+      }
+
     }
+
   }
-}
+
 
 </script>
 
+
 </body>
+
 </html>
