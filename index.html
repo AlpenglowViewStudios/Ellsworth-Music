@@ -1,167 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>The Ink Has Finally Dried | Ellsworth Barrett</title>
+<title>Ellsworth Barrett | Alpenglow View Studios</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      padding: 18px;
-      background: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  padding: 18px;
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
 
-    .container {
-      max-width: 620px;
-      margin: 0 auto;
-    }
+.container {
+  max-width: 620px;
+  margin: auto;
+}
 
-    .cover {
-      display: block;
-      width: 100%;
-      max-width: 560px;
-      height: auto;
-      margin: 0 auto;
-      border-radius: 8px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.6);
-    }
+.header {
+  margin: 8px 0 22px;
+}
 
-    .title {
-      margin-top: 18px;
-      margin-bottom: 4px;
-      font-size: 25px;
-      font-weight: 700;
-    }
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: normal;
+}
 
-    .artist {
-      margin: 0 0 18px;
-      font-size: 18px;
-      font-style: italic;
-      color: #ddd;
-    }
+.header .studio {
+  margin-top: 7px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #999;
+}
 
-    .player-wrap {
-      max-width: 560px;
-      margin: 0 auto;
-    }
+.song {
+  margin-bottom: 38px;
+}
 
-    .progress-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-      font-size: 12px;
-      color: #aaa;
-    }
+.cover {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.6);
+}
 
-    .progress {
-      flex: 1;
-      appearance: none;
-      height: 4px;
-      border-radius: 4px;
-      background: #555;
-      outline: none;
-      cursor: pointer;
-    }
+.song-title {
+  margin: 15px 0 3px;
+  font-size: 22px;
+  font-weight: bold;
+}
 
-    .progress::-webkit-slider-thumb {
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
-    }
+.artist {
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-style: italic;
+  color: #ccc;
+}
 
-    .progress::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border: none;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
-    }
+.player {
+  max-width: 560px;
+  margin: auto;
+}
 
-    .controls {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  color: #aaa;
+}
 
-    .control-btn {
-      width: 48px;
-      height: 48px;
-      border: 1px solid #666;
-      border-radius: 50%;
-      background: #222;
-      color: #fff;
-      font-size: 20px;
-      cursor: pointer;
-    }
+.progress {
+  flex: 1;
+  height: 4px;
+  cursor: pointer;
+}
 
-    .play-btn {
-      width: 58px;
-      height: 58px;
-      font-size: 24px;
-      background: #fff;
-      color: #111;
-      border: none;
-    }
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  margin-top: 11px;
+}
 
-    .action-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
+.control-btn {
+  width: 43px;
+  height: 43px;
+  border: 1px solid #555;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
 
-    .action-btn {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid #555;
-      border-radius: 999px;
-      background: #1c1c1c;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      cursor: pointer;
-    }
+.play-btn {
+  width: 52px;
+  height: 52px;
+  background: white;
+  color: #111;
+  border: none;
+  font-size: 21px;
+}
 
-    .action-btn:hover {
-      background: #2a2a2a;
-    }
+.divider {
+  height: 1px;
+  background: #333;
+  margin: 5px auto 35px;
+  max-width: 500px;
+}
 
-    .studio {
-      margin-top: 22px;
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #777;
-    }
-  </style>
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 22px;
+}
+
+.action-btn {
+  padding: 10px 17px;
+  border: 1px solid #555;
+  border-radius: 999px;
+  background: #1c1c1c;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer {
+  margin: 25px 0 10px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #777;
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
+
+  <div class="header">
+    <h1>Ellsworth Barrett</h1>
+    <div class="studio">ALPENGLOW VIEW STUDIOS</div>
+  </div>
+
+
+  <!-- SONG ONE -->
+
+  <div class="song">
 
     <img
       class="cover"
       src="The Ink Finally Dried 1.0.png"
-      alt="The Ink Has Finally Dried album cover">
+      alt="The Ink Has Finally Dried">
 
-    <div class="title">
+    <div class="song-title">
       The Ink Has Finally Dried
     </div>
 
@@ -169,153 +177,304 @@
       ~ Ellsworth Barrett ~
     </div>
 
-    <div class="player-wrap">
+    <div class="player">
 
-      <audio id="audio" preload="metadata">
+      <audio id="audio1" preload="metadata">
         <source src="ink.mp3" type="audio/mpeg">
       </audio>
 
       <div class="progress-wrap">
-        <span id="currentTime">0:00</span>
+        <span id="time1">0:00</span>
 
         <input
-          id="progress"
+          id="progress1"
           class="progress"
           type="range"
           min="0"
           max="100"
           value="0">
 
-        <span id="duration">4:47</span>
+        <span id="duration1">--:--</span>
       </div>
 
       <div class="controls">
 
         <button
           class="control-btn"
-          onclick="skip(-10)"
-          aria-label="Back 10 seconds">
+          onclick="skip('audio1',-10)">
           ↶
         </button>
 
         <button
-          id="playButton"
+          id="play1"
           class="control-btn play-btn"
-          onclick="togglePlay()"
-          aria-label="Play">
+          onclick="togglePlay('audio1','play1')">
           ▶
         </button>
 
         <button
           class="control-btn"
-          onclick="skip(10)"
-          aria-label="Forward 10 seconds">
+          onclick="skip('audio1',10)">
           ↷
         </button>
 
       </div>
 
-      <div class="action-row">
+    </div>
+  </div>
+
+
+  <div class="divider"></div>
+
+
+  <!-- SONG TWO -->
+
+  <div class="song">
+
+    <img
+      class="cover"
+      src="she-knew-me.png"
+      alt="She Saw Me Before She Knew Me">
+
+    <div class="song-title">
+      She Saw Me Before She Knew Me
+    </div>
+
+    <div class="artist">
+      ~ Ellsworth Barrett ~
+    </div>
+
+    <div class="player">
+
+      <audio id="audio2" preload="metadata">
+        <source src="she-saw-me.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="progress-wrap">
+        <span id="time2">0:00</span>
+
+        <input
+          id="progress2"
+          class="progress"
+          type="range"
+          min="0"
+          max="100"
+          value="0">
+
+        <span id="duration2">--:--</span>
+      </div>
+
+      <div class="controls">
 
         <button
-          class="action-btn"
-          onclick="sharePage()">
-          Share
+          class="control-btn"
+          onclick="skip('audio2',-10)">
+          ↶
         </button>
 
-        <a
-          class="action-btn"
-          href="https://www.facebook.com/profile.php?id=61593677165648"
-          target="_blank"
-          rel="noopener noreferrer">
-          Facebook
-        </a>
+        <button
+          id="play2"
+          class="control-btn play-btn"
+          onclick="togglePlay('audio2','play2')">
+          ▶
+        </button>
+
+        <button
+          class="control-btn"
+          onclick="skip('audio2',10)">
+          ↷
+        </button>
 
       </div>
 
     </div>
+  </div>
 
-    <div class="studio">
-      ALPENGLOW VIEW STUDIOS
-    </div>
+
+  <div class="divider"></div>
+
+
+  <!-- SHARE / FACEBOOK -->
+
+  <div class="actions">
+
+    <button
+      class="action-btn"
+      onclick="sharePage()">
+      Share
+    </button>
+
+    <a
+      class="action-btn"
+      href="https://www.facebook.com/profile.php?id=61593677165648"
+      target="_blank"
+      rel="noopener noreferrer">
+      Facebook
+    </a>
 
   </div>
 
-  <script>
-    const audio = document.getElementById("audio");
-    const playButton = document.getElementById("playButton");
-    const progress = document.getElementById("progress");
-    const currentTime = document.getElementById("currentTime");
-    const duration = document.getElementById("duration");
 
-    function formatTime(seconds) {
-      if (isNaN(seconds)) return "0:00";
+  <div class="footer">
+    ALPENGLOW VIEW STUDIOS · POLSON, MONTANA
+  </div>
 
-      const minutes = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
+</div>
 
-      return minutes + ":" + secs.toString().padStart(2, "0");
+
+<script>
+
+const songs = [
+  {
+    audio: document.getElementById("audio1"),
+    play: document.getElementById("play1"),
+    progress: document.getElementById("progress1"),
+    time: document.getElementById("time1"),
+    duration: document.getElementById("duration1")
+  },
+  {
+    audio: document.getElementById("audio2"),
+    play: document.getElementById("play2"),
+    progress: document.getElementById("progress2"),
+    time: document.getElementById("time2"),
+    duration: document.getElementById("duration2")
+  }
+];
+
+
+function formatTime(seconds) {
+
+  if (isNaN(seconds)) return "0:00";
+
+  const minutes = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return minutes + ":" +
+    secs.toString().padStart(2,"0");
+}
+
+
+function togglePlay(audioId, buttonId) {
+
+  const selectedAudio =
+    document.getElementById(audioId);
+
+  songs.forEach(song => {
+
+    if (song.audio !== selectedAudio) {
+      song.audio.pause();
     }
 
-    function togglePlay() {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+  });
+
+  if (selectedAudio.paused) {
+    selectedAudio.play();
+  } else {
+    selectedAudio.pause();
+  }
+}
+
+
+function skip(audioId, seconds) {
+
+  const audio =
+    document.getElementById(audioId);
+
+  audio.currentTime += seconds;
+}
+
+
+songs.forEach(song => {
+
+  song.audio.addEventListener(
+    "loadedmetadata",
+    () => {
+      song.duration.textContent =
+        formatTime(song.audio.duration);
     }
+  );
 
-    function skip(seconds) {
-      audio.currentTime += seconds;
+
+  song.audio.addEventListener(
+    "timeupdate",
+    () => {
+
+      if (song.audio.duration) {
+
+        song.progress.value =
+          (song.audio.currentTime /
+           song.audio.duration) * 100;
+
+      }
+
+      song.time.textContent =
+        formatTime(song.audio.currentTime);
+
     }
+  );
 
-    audio.addEventListener("play", () => {
-      playButton.textContent = "❚❚";
-    });
 
-    audio.addEventListener("pause", () => {
-      playButton.textContent = "▶";
-    });
-
-    audio.addEventListener("loadedmetadata", () => {
-      duration.textContent = formatTime(audio.duration);
-    });
-
-    audio.addEventListener("timeupdate", () => {
-      if (audio.duration) {
-        progress.value = (audio.currentTime / audio.duration) * 100;
-      }
-
-      currentTime.textContent = formatTime(audio.currentTime);
-    });
-
-    progress.addEventListener("input", () => {
-      if (audio.duration) {
-        audio.currentTime =
-          (progress.value / 100) * audio.duration;
-      }
-    });
-
-    async function sharePage() {
-      const shareData = {
-        title: "The Ink Has Finally Dried",
-        text: "Listen to The Ink Has Finally Dried by Ellsworth Barrett.",
-        url: window.location.href
-      };
-
-      if (navigator.share) {
-        try {
-          await navigator.share(shareData);
-        } catch (err) {
-          // User cancelled sharing
-        }
-      } else {
-        navigator.clipboard.writeText(window.location.href);
-
-        alert("Link copied to clipboard.");
-      }
+  song.audio.addEventListener(
+    "play",
+    () => {
+      song.play.textContent = "❚❚";
     }
-  </script>
+  );
+
+
+  song.audio.addEventListener(
+    "pause",
+    () => {
+      song.play.textContent = "▶";
+    }
+  );
+
+
+  song.progress.addEventListener(
+    "input",
+    () => {
+
+      if (song.audio.duration) {
+
+        song.audio.currentTime =
+          (song.progress.value / 100) *
+          song.audio.duration;
+
+      }
+
+    }
+  );
+
+});
+
+
+async function sharePage() {
+
+  const data = {
+    title: "Ellsworth Barrett",
+    text:
+      "Listen to music by Ellsworth Barrett.",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+
+    try {
+      await navigator.share(data);
+    } catch (err) {}
+
+  } else {
+
+    await navigator.clipboard.writeText(
+      window.location.href
+    );
+
+    alert("Link copied to clipboard.");
+
+  }
+}
+
+</script>
 
 </body>
 </html>
