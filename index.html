@@ -549,6 +549,53 @@
 
     </article>
 
+
+    <!-- BETWEEN THE SUNRISE AND GOODBYE -->
+
+    <article class="song-card">
+
+      <img
+        src="somewhere between.png"
+        class="cover"
+        alt="Between the Sunrise and Goodbye">
+
+      <div class="song-title">
+        Between the Sunrise and Goodbye
+      </div>
+
+      <div class="song-credit">
+        with Cynthia Marie
+      </div>
+
+      <audio
+        id="audio4"
+        preload="metadata"
+        src="PublishedSomewhere Between the Sunrise.mp3">
+      </audio>
+
+      <button
+        id="button4"
+        class="play-button"
+        onclick="toggleSong(4)">
+        ▶ PLAY
+      </button>
+
+      <div class="progress-wrap">
+        <input
+          id="progress4"
+          class="progress"
+          type="range"
+          min="0"
+          max="100"
+          value="0">
+
+        <div id="time4" class="time">
+          0:00 / --:--
+        </div>
+      </div>
+
+    </article>
+
   </section>
 
 
@@ -625,25 +672,29 @@
   const audios = [
     document.getElementById("audio1"),
     document.getElementById("audio2"),
-    document.getElementById("audio3")
+    document.getElementById("audio3"),
+    document.getElementById("audio4")
   ];
 
   const buttons = [
     document.getElementById("button1"),
     document.getElementById("button2"),
-    document.getElementById("button3")
+    document.getElementById("button3"),
+    document.getElementById("button4")
   ];
 
   const progresses = [
     document.getElementById("progress1"),
     document.getElementById("progress2"),
-    document.getElementById("progress3")
+    document.getElementById("progress3"),
+    document.getElementById("progress4")
   ];
 
   const times = [
     document.getElementById("time1"),
     document.getElementById("time2"),
-    document.getElementById("time3")
+    document.getElementById("time3"),
+    document.getElementById("time4")
   ];
 
 
