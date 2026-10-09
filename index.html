@@ -98,11 +98,15 @@
     /* PLAY ALL */
 
     .play-all-wrap {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
       margin: 22px 0 6px;
     }
 
-    .play-all-button {
+    .play-all-button,
+    .restart-button {
       width: 94%;
       max-width: 360px;
       padding: 13px 15px;
@@ -117,7 +121,14 @@
       box-shadow: 0 7px 20px rgba(0,0,0,.35);
     }
 
-    .play-all-button:active {
+    .restart-button {
+      max-width: 190px;
+      border-color: rgba(219,166,66,.70);
+      font-size: 12px;
+    }
+
+    .play-all-button:active,
+    .restart-button:active {
       transform: scale(.98);
     }
 
@@ -356,6 +367,10 @@
         width: 96%;
         font-size: 13px;
       }
+
+      .restart-button {
+        width: 65%;
+      }
     }
 
     /* TABLET / DESKTOP */
@@ -446,7 +461,7 @@
   </header>
 
 
-  <!-- PLAY ALL -->
+  <!-- PLAY ALL CONTROLS -->
 
   <div class="play-all-wrap">
 
@@ -455,6 +470,13 @@
       class="play-all-button"
       onclick="togglePlayAll()">
       ▶ PLAY ALL — NEWEST TO OLDEST
+    </button>
+
+    <button
+      id="restartButton"
+      class="restart-button"
+      onclick="restartPlayAll()">
+      ↺ START OVER
     </button>
 
   </div>
@@ -483,7 +505,7 @@
       <audio
         id="audio1"
         preload="metadata"
-       src="Love Between the Pages.mp3"
+        src="Love Between the Pages.mp3">
       </audio>
 
       <button
@@ -917,6 +939,7 @@
     document.getElementById("playAllButton");
 
   let playAllMode = false;
+  let playAllPaused = false;
   let currentPlaylistIndex = 0;
 
 
@@ -934,15 +957,50 @@
   }
 
 
-  /* PLAY ALL */
+  /* PLAY ALL / PAUSE / RESUME */
 
   function togglePlayAll() {
 
-    if (playAllMode) {
+    /*
+      PLAY ALL IS CURRENTLY RUNNING:
+      Pause the current song but remember our position.
+    */
 
-      stopPlayAll();
+    if (playAllMode && !playAllPaused) {
+
+      audios[currentPlaylistIndex].pause();
+
+      playAllPaused = true;
+
+      playAllButton.textContent =
+        "▶ RESUME PLAY ALL";
+
       return;
     }
+
+
+    /*
+      PLAY ALL IS PAUSED:
+      Resume the SAME song at the SAME position.
+    */
+
+    if (playAllMode && playAllPaused) {
+
+      playAllPaused = false;
+
+      playAllButton.textContent =
+        "❚❚ PAUSE PLAY ALL";
+
+      audios[currentPlaylistIndex].play();
+
+      return;
+    }
+
+
+    /*
+      PLAY ALL IS NOT ACTIVE:
+      Start from the beginning.
+    */
 
     audios.forEach(function(audio) {
       audio.pause();
@@ -950,28 +1008,37 @@
     });
 
     playAllMode = true;
+    playAllPaused = false;
     currentPlaylistIndex = 0;
 
     playAllButton.textContent =
-      "■ STOP PLAY ALL";
+      "❚❚ PAUSE PLAY ALL";
 
-    audios[0].play();
+    audios[currentPlaylistIndex].play();
   }
 
 
-  function stopPlayAll() {
+  /* START PLAYLIST OVER */
 
-    playAllMode = false;
-    currentPlaylistIndex = 0;
+  function restartPlayAll() {
 
     audios.forEach(function(audio) {
       audio.pause();
+      audio.currentTime = 0;
     });
 
-    playAllButton.textContent =
-      "▶ PLAY ALL — NEWEST TO OLDEST";
+    progresses.forEach(function(progress) {
+      progress.value = 0;
+    });
 
-    updateButtons();
+    currentPlaylistIndex = 0;
+    playAllMode = true;
+    playAllPaused = false;
+
+    playAllButton.textContent =
+      "❚❚ PAUSE PLAY ALL";
+
+    audios[0].play();
   }
 
 
@@ -982,15 +1049,19 @@
     const selectedIndex = number - 1;
     const selected = audios[selectedIndex];
 
-    /* Manual song selection cancels Play All */
+    /*
+      Manual song selection exits playlist mode.
+    */
 
     if (playAllMode) {
 
       playAllMode = false;
+      playAllPaused = false;
 
       playAllButton.textContent =
         "▶ PLAY ALL — NEWEST TO OLDEST";
     }
+
 
     audios.forEach(function(audio, index) {
 
@@ -999,6 +1070,7 @@
       }
 
     });
+
 
     if (selected.paused) {
       selected.play();
@@ -1030,6 +1102,7 @@
       "play",
       updateButtons
     );
+
 
     audio.addEventListener(
       "pause",
@@ -1067,6 +1140,10 @@
     );
 
 
+    /*
+      SEEK WITH PROGRESS SLIDER
+    */
+
     progresses[index].addEventListener(
       "input",
       function() {
@@ -1082,7 +1159,9 @@
     );
 
 
-    /* MOVE TO NEXT SONG DURING PLAY ALL */
+    /*
+      MOVE TO NEXT SONG DURING PLAY ALL
+    */
 
     audio.addEventListener(
       "ended",
@@ -1100,6 +1179,8 @@
           audios.length
         ) {
 
+          playAllPaused = false;
+
           audios[
             currentPlaylistIndex
           ].currentTime = 0;
@@ -1112,6 +1193,7 @@
         else {
 
           playAllMode = false;
+          playAllPaused = false;
           currentPlaylistIndex = 0;
 
           playAllButton.textContent =
