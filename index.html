@@ -12,6 +12,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -29,14 +33,20 @@
       padding: 22px 14px 38px;
     }
 
-    /* ARTIST HEADER */
+    /* =========================
+       HEADER
+       ========================= */
 
     .hero {
       padding: 16px 14px 20px;
       border-radius: 18px;
-      background: linear-gradient(rgba(7,18,28,.72), rgba(3,10,16,.88));
-      border: 1px solid rgba(222,170,70,.45);
-      box-shadow: 0 12px 34px rgba(0,0,0,.36);
+      background:
+        linear-gradient(
+          rgba(7, 18, 28, .72),
+          rgba(3, 10, 16, .88)
+        );
+      border: 1px solid rgba(222, 170, 70, .45);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, .36);
     }
 
     .top-row {
@@ -52,7 +62,7 @@
       object-fit: cover;
       border-radius: 50%;
       border: 3px solid #d9a640;
-      box-shadow: 0 8px 25px rgba(0,0,0,.55);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .55);
     }
 
     .tagline {
@@ -92,12 +102,14 @@
       text-align: center;
       font-size: 12px;
       letter-spacing: 3px;
-      color: rgba(255,255,255,.82);
+      color: rgba(255, 255, 255, .82);
     }
 
-    /* MAIN CONTROLS */
+    /* =========================
+       MAIN PLAYER CONTROLS
+       ========================= */
 
-    .play-all-wrap {
+    .master-controls {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -105,48 +117,44 @@
       margin: 22px 0 6px;
     }
 
-    .play-all-button,
-    .repeat-all-button,
-    .restart-button {
+    .master-button {
       padding: 13px 15px;
       border: 2px solid #dba642;
       border-radius: 30px;
-      background: rgba(7,7,7,.95);
+      background: rgba(7, 7, 7, .95);
       color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
       font-weight: bold;
       letter-spacing: 1px;
       cursor: pointer;
-      box-shadow: 0 7px 20px rgba(0,0,0,.35);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, .35);
     }
 
-    .play-all-button {
+    #playAllButton {
       width: 94%;
       max-width: 360px;
       font-size: 14px;
     }
 
-    .repeat-all-button {
+    #repeatAllButton {
       width: 94%;
       max-width: 260px;
       font-size: 12px;
     }
 
-    .restart-button {
+    #startOverButton {
       width: 94%;
       max-width: 190px;
-      border-color: rgba(219,166,66,.70);
       font-size: 12px;
     }
 
-    .play-all-button:active,
-    .repeat-all-button:active,
-    .restart-button:active,
-    .play-button:active,
-    .repeat-song-button:active {
+    button:active {
       transform: scale(.98);
     }
 
-    /* SONG CARDS */
+    /* =========================
+       SONG GRID
+       ========================= */
 
     .songs {
       display: grid;
@@ -160,17 +168,23 @@
       padding: 8px 8px 12px;
       border-radius: 14px;
       text-align: center;
-      background: linear-gradient(rgba(4,10,14,.83), rgba(1,4,7,.94));
-      border: 1px solid rgba(215,163,61,.58);
-      box-shadow: 0 10px 28px rgba(0,0,0,.48);
-      transition: border-color .25s ease, box-shadow .25s ease;
+      background:
+        linear-gradient(
+          rgba(4, 10, 14, .83),
+          rgba(1, 4, 7, .94)
+        );
+      border: 1px solid rgba(215, 163, 61, .58);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .48);
+      transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
     }
 
-    .song-card.active-song {
-      border-color: rgba(232,183,87,.95);
+    .song-card.active {
+      border-color: rgba(232, 183, 87, 1);
       box-shadow:
-        0 10px 28px rgba(0,0,0,.48),
-        0 0 14px rgba(217,164,66,.18);
+        0 10px 28px rgba(0, 0, 0, .48),
+        0 0 16px rgba(217, 164, 66, .22);
     }
 
     .cover {
@@ -180,7 +194,7 @@
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #c79535;
-      box-shadow: 0 7px 20px rgba(0,0,0,.5);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, .5);
     }
 
     .song-title {
@@ -188,7 +202,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 6px 2px 0;
+      padding: 7px 2px 0;
       font-size: clamp(15px, 2.3vw, 23px);
       font-weight: bold;
       line-height: 1.08;
@@ -196,64 +210,82 @@
 
     .song-credit {
       min-height: 22px;
-      color: #d9a544;
-      font-size: 11px;
+      color: #e3ad36;
       font-family: Arial, sans-serif;
+      font-size: 11px;
     }
 
-    /* SONG BUTTONS */
+    /* =========================
+       SONG BUTTONS
+       ========================= */
 
     .play-button,
-    .repeat-song-button {
+    .repeat-button {
+      display: block;
       width: 94%;
-      margin: 7px auto 0;
-      padding: 11px 4px;
-      border: 2px solid #dba642;
+      margin-left: auto;
+      margin-right: auto;
       border-radius: 30px;
-      background: rgba(7,7,7,.95);
+      background: rgba(7, 7, 7, .96);
       color: #fff;
-      letter-spacing: 1px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: bold;
+      letter-spacing: .6px;
       cursor: pointer;
     }
 
     .play-button {
+      margin-top: 7px;
+      padding: 11px 4px;
+      border: 2px solid #dba642;
       font-size: 14px;
     }
 
-    .repeat-song-button {
+    .repeat-button {
+      margin-top: 7px;
+      padding: 10px 4px;
+      border: 2px solid rgba(219, 166, 66, .70);
       font-size: 11px;
-      border-color: rgba(219,166,66,.68);
     }
 
-    /* VISUALIZER */
+    /* =========================
+       VISUALIZER
+       ========================= */
 
     .visualizer {
       display: block;
       width: 94%;
-      height: 30px;
+      height: 28px;
       margin: 9px auto 2px;
-      opacity: .90;
     }
 
-    /* PROGRESS */
+    /* =========================
+       PROGRESS
+       ========================= */
 
     .progress-wrap {
-      margin-top: 4px;
+      width: 100%;
+      margin-top: 2px;
     }
 
     .progress {
+      display: block;
       width: 94%;
-      accent-color: #d9a442;
+      margin: 0 auto;
+      accent-color: #e2aa3e;
+      cursor: pointer;
     }
 
     .time {
-      margin-top: 2px;
-      color: #bbb;
+      margin-top: 3px;
+      color: #ddd;
       font-family: Arial, sans-serif;
       font-size: 10px;
     }
 
-    /* LISTEN / LINKS */
+    /* =========================
+       LINKS
+       ========================= */
 
     .section-title {
       margin: 30px 0 13px;
@@ -265,18 +297,24 @@
     .links-panel {
       padding: 16px;
       border-radius: 16px;
-      background: rgba(2,8,12,.86);
-      border: 1px solid rgba(210,157,55,.45);
-      box-shadow: 0 8px 25px rgba(0,0,0,.36);
+      background: rgba(2, 8, 12, .86);
+      border: 1px solid rgba(210, 157, 55, .45);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, .36);
     }
 
-    .streaming {
+    .streaming,
+    .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
     }
 
-    .service {
+    .actions {
+      margin-top: 12px;
+    }
+
+    .service,
+    .action {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -285,36 +323,21 @@
       border-radius: 30px;
       border: 1px solid #b98b36;
       background: #111;
-      color: white;
+      color: #fff;
       text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .action {
-      min-height: 46px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #d3a043;
-      border-radius: 30px;
-      background: #111;
-      color: white;
       text-align: center;
-      text-decoration: none;
       font-family: Arial, sans-serif;
       font-size: 14px;
       cursor: pointer;
     }
 
-    /* FOOTER */
+    .action {
+      border-color: #d3a043;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
 
     .footer {
       margin-top: 28px;
@@ -341,7 +364,9 @@
       letter-spacing: 4px;
     }
 
-    /* PHONE */
+    /* =========================
+       PHONE
+       ========================= */
 
     @media (max-width: 520px) {
 
@@ -386,8 +411,8 @@
       }
 
       .song-card {
-        max-width: 390px;
         width: 100%;
+        max-width: 390px;
         margin: 0 auto;
       }
 
@@ -398,18 +423,14 @@
       }
 
       .play-button,
-      .repeat-song-button,
-      .play-all-button,
-      .repeat-all-button {
+      .repeat-button {
         width: 96%;
-      }
-
-      .restart-button {
-        width: 65%;
       }
     }
 
-    /* TABLET / DESKTOP */
+    /* =========================
+       LARGER SCREENS
+       ========================= */
 
     @media (min-width: 700px) {
 
@@ -443,23 +464,23 @@
         font-size: 21px;
       }
 
-      .play-button,
-      .repeat-song-button {
-        max-width: 260px;
-      }
-
       .links-panel {
         max-width: 620px;
         margin: 0 auto;
       }
     }
-
   </style>
 </head>
+
 
 <body>
 
 <div class="page">
+
+
+  <!-- =========================
+       HEADER
+       ========================= -->
 
   <header class="hero">
 
@@ -498,40 +519,43 @@
   </header>
 
 
-  <!-- MAIN CONTROLS -->
+  <!-- =========================
+       MASTER CONTROLS
+       ========================= -->
 
-  <div class="play-all-wrap">
+  <div class="master-controls">
 
     <button
       id="playAllButton"
-      class="play-all-button"
-      onclick="togglePlayAll()">
+      class="master-button">
       ▶ PLAY ALL — NEWEST TO OLDEST
     </button>
 
     <button
       id="repeatAllButton"
-      class="repeat-all-button"
-      onclick="repeatAllThree()">
+      class="master-button">
       ↻ REPEAT ALL ×3
     </button>
 
     <button
-      id="restartButton"
-      class="restart-button"
-      onclick="restartPlayAll()">
+      id="startOverButton"
+      class="master-button">
       ↺ START OVER
     </button>
 
   </div>
 
 
+  <!-- =========================
+       SONGS
+       ========================= -->
+
   <section class="songs">
 
 
-    <!-- 1. MONTANA COWBOY CHRISTMAS -->
+    <!-- SONG 1 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card1">
 
       <img
         src="montana cowboy christmas.png"
@@ -549,20 +573,18 @@
       <audio
         id="audio1"
         preload="metadata"
-       src="Montana Cowboy Christmas.mp3"
+        src="Montana Cowboy Christmas (1).mp3">
       </audio>
 
       <button
-        id="button1"
-        class="play-button"
-        onclick="toggleSong(1)">
+        id="play1"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat1"
-        class="repeat-song-button"
-        onclick="repeatSongThree(1)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -581,7 +603,9 @@
           max="100"
           value="0">
 
-        <div id="time1" class="time">
+        <div
+          id="time1"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -590,9 +614,9 @@
     </article>
 
 
-    <!-- 2. LOVE BETWEEN THE PAGES -->
+    <!-- SONG 2 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card2">
 
       <img
         src="Love Between the Pages.png"
@@ -614,16 +638,14 @@
       </audio>
 
       <button
-        id="button2"
-        class="play-button"
-        onclick="toggleSong(2)">
+        id="play2"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat2"
-        class="repeat-song-button"
-        onclick="repeatSongThree(2)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -642,7 +664,9 @@
           max="100"
           value="0">
 
-        <div id="time2" class="time">
+        <div
+          id="time2"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -651,9 +675,9 @@
     </article>
 
 
-    <!-- 3. SUNSET ON YESTERDAY -->
+    <!-- SONG 3 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card3">
 
       <img
         src="Sunset on Yesterday.png"
@@ -664,7 +688,9 @@
         Sunset on Yesterday
       </div>
 
-      <div class="song-credit">&nbsp;</div>
+      <div class="song-credit">
+        &nbsp;
+      </div>
 
       <audio
         id="audio3"
@@ -673,16 +699,14 @@
       </audio>
 
       <button
-        id="button3"
-        class="play-button"
-        onclick="toggleSong(3)">
+        id="play3"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat3"
-        class="repeat-song-button"
-        onclick="repeatSongThree(3)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -701,7 +725,9 @@
           max="100"
           value="0">
 
-        <div id="time3" class="time">
+        <div
+          id="time3"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -710,9 +736,9 @@
     </article>
 
 
-    <!-- 4. DANCE WITH ME TONIGHT -->
+    <!-- SONG 4 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card4">
 
       <img
         src="Dance with me tonight.png"
@@ -734,16 +760,14 @@
       </audio>
 
       <button
-        id="button4"
-        class="play-button"
-        onclick="toggleSong(4)">
+        id="play4"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat4"
-        class="repeat-song-button"
-        onclick="repeatSongThree(4)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -762,7 +786,9 @@
           max="100"
           value="0">
 
-        <div id="time4" class="time">
+        <div
+          id="time4"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -771,9 +797,9 @@
     </article>
 
 
-    <!-- 5. BETWEEN THE SUNRISE AND GOODBYE -->
+    <!-- SONG 5 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card5">
 
       <img
         src="somewhere between.png"
@@ -795,16 +821,14 @@
       </audio>
 
       <button
-        id="button5"
-        class="play-button"
-        onclick="toggleSong(5)">
+        id="play5"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat5"
-        class="repeat-song-button"
-        onclick="repeatSongThree(5)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -823,7 +847,9 @@
           max="100"
           value="0">
 
-        <div id="time5" class="time">
+        <div
+          id="time5"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -832,9 +858,9 @@
     </article>
 
 
-    <!-- 6. ECHOES IN THE NIGHT -->
+    <!-- SONG 6 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card6">
 
       <img
         src="echoes in the night.png"
@@ -856,16 +882,14 @@
       </audio>
 
       <button
-        id="button6"
-        class="play-button"
-        onclick="toggleSong(6)">
+        id="play6"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat6"
-        class="repeat-song-button"
-        onclick="repeatSongThree(6)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -884,7 +908,9 @@
           max="100"
           value="0">
 
-        <div id="time6" class="time">
+        <div
+          id="time6"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -893,9 +919,9 @@
     </article>
 
 
-    <!-- 7. THE INK HAS FINALLY DRIED -->
+    <!-- SONG 7 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card7">
 
       <img
         src="The Ink Finally Dried 1.0.png"
@@ -906,7 +932,9 @@
         The Ink Has Finally Dried
       </div>
 
-      <div class="song-credit">&nbsp;</div>
+      <div class="song-credit">
+        &nbsp;
+      </div>
 
       <audio
         id="audio7"
@@ -915,16 +943,14 @@
       </audio>
 
       <button
-        id="button7"
-        class="play-button"
-        onclick="toggleSong(7)">
+        id="play7"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat7"
-        class="repeat-song-button"
-        onclick="repeatSongThree(7)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -943,7 +969,9 @@
           max="100"
           value="0">
 
-        <div id="time7" class="time">
+        <div
+          id="time7"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -952,9 +980,9 @@
     </article>
 
 
-    <!-- 8. SHE SAW ME BEFORE SHE KNEW ME -->
+    <!-- SONG 8 -->
 
-    <article class="song-card">
+    <article class="song-card" id="card8">
 
       <img
         src="she-knew-me.png"
@@ -965,7 +993,9 @@
         She Saw Me Before She Knew Me
       </div>
 
-      <div class="song-credit">&nbsp;</div>
+      <div class="song-credit">
+        &nbsp;
+      </div>
 
       <audio
         id="audio8"
@@ -974,16 +1004,14 @@
       </audio>
 
       <button
-        id="button8"
-        class="play-button"
-        onclick="toggleSong(8)">
+        id="play8"
+        class="play-button">
         ▶ PLAY
       </button>
 
       <button
         id="repeat8"
-        class="repeat-song-button"
-        onclick="repeatSongThree(8)">
+        class="repeat-button">
         ↻ REPEAT SONG ×3
       </button>
 
@@ -1002,7 +1030,9 @@
           max="100"
           value="0">
 
-        <div id="time8" class="time">
+        <div
+          id="time8"
+          class="time">
           0:00 / --:--
         </div>
 
@@ -1014,10 +1044,13 @@
   </section>
 
 
+  <!-- =========================
+       LISTEN LINKS
+       ========================= -->
+
   <div class="section-title">
     LISTEN ON
   </div>
-
 
   <div class="links-panel">
 
@@ -1041,12 +1074,11 @@
 
     </div>
 
-
     <div class="actions">
 
       <button
-        class="action"
-        onclick="sharePage()">
+        id="shareButton"
+        class="action">
         Share
       </button>
 
@@ -1062,6 +1094,10 @@
 
   </div>
 
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
 
   <footer class="footer">
 
@@ -1079,19 +1115,25 @@
 
   </footer>
 
+
 </div>
 
 
 <script>
 
+  /* ==========================================
+     BASIC PLAYER SETUP
+     ========================================== */
+
   const SONG_COUNT = 8;
 
   const audios = [];
-  const buttons = [];
+  const playButtons = [];
   const repeatButtons = [];
-  const progresses = [];
-  const times = [];
-  const visualizers = [];
+  const progressBars = [];
+  const timeDisplays = [];
+  const cards = [];
+  const canvases = [];
 
   for (let i = 1; i <= SONG_COUNT; i++) {
 
@@ -1099,23 +1141,27 @@
       document.getElementById("audio" + i)
     );
 
-    buttons.push(
-      document.getElementById("button" + i)
+    playButtons.push(
+      document.getElementById("play" + i)
     );
 
     repeatButtons.push(
       document.getElementById("repeat" + i)
     );
 
-    progresses.push(
+    progressBars.push(
       document.getElementById("progress" + i)
     );
 
-    times.push(
+    timeDisplays.push(
       document.getElementById("time" + i)
     );
 
-    visualizers.push(
+    cards.push(
+      document.getElementById("card" + i)
+    );
+
+    canvases.push(
       document.getElementById("visualizer" + i)
     );
   }
@@ -1127,34 +1173,60 @@
   const repeatAllButton =
     document.getElementById("repeatAllButton");
 
+  const startOverButton =
+    document.getElementById("startOverButton");
 
-  /* PLAYER STATE */
+  const shareButton =
+    document.getElementById("shareButton");
 
-  let playAllMode = false;
-  let playAllPaused = false;
-  let currentPlaylistIndex = 0;
 
-  let repeatAllMode = false;
-  let playlistPass = 1;
+  /* ==========================================
+     PLAYBACK STATE
+     ========================================== */
 
-  let repeatSongMode = false;
+  let playlistActive = false;
+
+  let playlistPaused = false;
+
+  let playlistIndex = 0;
+
+  let repeatAllActive = false;
+
+  let repeatAllPass = 1;
+
   let repeatSongIndex = -1;
-  let repeatSongPass = 1;
+
+  let repeatSongPass = 0;
 
 
-  /* VISUALIZER STATE */
+  /* ==========================================
+     VISUALIZER STATE
+     ========================================== */
 
   let audioContext = null;
-  let analyser = null;
-  let frequencyData = null;
-  let sourceNodes = [];
-  let visualizerStarted = false;
-  let activeVisualizerIndex = -1;
 
+  const analysers = new Array(
+    SONG_COUNT
+  ).fill(null);
+
+  const sourceNodes = new Array(
+    SONG_COUNT
+  ).fill(null);
+
+  const frequencyArrays = new Array(
+    SONG_COUNT
+  ).fill(null);
+
+  let animationRunning = false;
+
+
+  /* ==========================================
+     TIME FORMAT
+     ========================================== */
 
   function formatTime(seconds) {
 
-    if (!isFinite(seconds)) {
+    if (!Number.isFinite(seconds)) {
       return "--:--";
     }
 
@@ -1164,76 +1236,174 @@
     const secs =
       Math.floor(seconds % 60);
 
-    return minutes + ":" +
-      secs.toString().padStart(2, "0");
+    return (
+      minutes +
+      ":" +
+      secs.toString().padStart(2, "0")
+    );
   }
 
 
-  /* AUDIO VISUALIZER */
+  /* ==========================================
+     BUTTON DISPLAY
+     ========================================== */
 
-  function setupAudioVisualizer() {
+  function updatePlayButtons() {
+
+    audios.forEach(
+      function(audio, index) {
+
+        if (
+          !audio.paused &&
+          !audio.ended
+        ) {
+
+          playButtons[index].textContent =
+            "❚❚ PAUSE";
+
+        } else {
+
+          playButtons[index].textContent =
+            "▶ PLAY";
+        }
+      }
+    );
+  }
+
+
+  function resetRepeatSongButtons() {
+
+    repeatButtons.forEach(
+      function(button) {
+
+        button.textContent =
+          "↻ REPEAT SONG ×3";
+      }
+    );
+  }
+
+
+  function updateActiveCard() {
+
+    cards.forEach(
+      function(card, index) {
+
+        if (
+          !audios[index].paused &&
+          !audios[index].ended
+        ) {
+
+          card.classList.add(
+            "active"
+          );
+
+        } else {
+
+          card.classList.remove(
+            "active"
+          );
+        }
+      }
+    );
+  }
+
+
+  /* ==========================================
+     STOP HELPERS
+     ========================================== */
+
+  function pauseAllExcept(
+    keepIndex
+  ) {
+
+    audios.forEach(
+      function(audio, index) {
+
+        if (index !== keepIndex) {
+          audio.pause();
+        }
+      }
+    );
+  }
+
+
+  function stopAndResetAll() {
+
+    audios.forEach(
+      function(audio) {
+
+        audio.pause();
+
+        try {
+          audio.currentTime = 0;
+        }
+        catch (error) {
+        }
+      }
+    );
+
+    progressBars.forEach(
+      function(progress) {
+
+        progress.value = 0;
+      }
+    );
+
+    updatePlayButtons();
+    updateActiveCard();
+  }
+
+
+  function cancelSingleRepeat() {
+
+    repeatSongIndex = -1;
+    repeatSongPass = 0;
+
+    resetRepeatSongButtons();
+  }
+
+
+  function cancelPlaylist() {
+
+    playlistActive = false;
+    playlistPaused = false;
+    playlistIndex = 0;
+
+    repeatAllActive = false;
+    repeatAllPass = 1;
+
+    playAllButton.textContent =
+      "▶ PLAY ALL — NEWEST TO OLDEST";
+
+    repeatAllButton.textContent =
+      "↻ REPEAT ALL ×3";
+  }
+
+
+  /* ==========================================
+     VISUALIZER
+     ========================================== */
+
+  function ensureAudioContext() {
+
+    const AudioContextClass =
+      window.AudioContext ||
+      window.webkitAudioContext;
+
+    if (!AudioContextClass) {
+      return;
+    }
+
 
     if (!audioContext) {
-
-      const AudioContextClass =
-        window.AudioContext ||
-        window.webkitAudioContext;
-
-      if (!AudioContextClass) {
-        return;
-      }
 
       try {
 
         audioContext =
           new AudioContextClass();
 
-        analyser =
-          audioContext.createAnalyser();
-
-        analyser.fftSize = 128;
-
-        analyser.smoothingTimeConstant =
-          0.82;
-
-        frequencyData =
-          new Uint8Array(
-            analyser.frequencyBinCount
-          );
-
-        analyser.connect(
-          audioContext.destination
-        );
-
-
-        audios.forEach(
-          function(audio, index) {
-
-            try {
-
-              const source =
-                audioContext
-                  .createMediaElementSource(
-                    audio
-                  );
-
-              source.connect(analyser);
-
-              sourceNodes[index] =
-                source;
-
-            }
-            catch (error) {
-            }
-
-          }
-        );
-
       }
       catch (error) {
-
-        audioContext = null;
-        analyser = null;
 
         return;
       }
@@ -1241,7 +1411,6 @@
 
 
     if (
-      audioContext &&
       audioContext.state === "suspended"
     ) {
 
@@ -1251,18 +1420,86 @@
     }
 
 
-    if (!visualizerStarted) {
+    if (!animationRunning) {
 
-      visualizerStarted = true;
+      animationRunning = true;
 
       requestAnimationFrame(
-        drawVisualizers
+        drawAllVisualizers
       );
     }
   }
 
 
-  function sizeCanvas(canvas) {
+  function connectVisualizer(index) {
+
+    ensureAudioContext();
+
+    if (!audioContext) {
+      return;
+    }
+
+
+    /*
+      A MediaElementAudioSourceNode may
+      only be created once for each
+      audio element.
+    */
+
+    if (sourceNodes[index]) {
+      return;
+    }
+
+
+    try {
+
+      const source =
+        audioContext
+          .createMediaElementSource(
+            audios[index]
+          );
+
+      const analyser =
+        audioContext
+          .createAnalyser();
+
+      analyser.fftSize = 128;
+
+      analyser.smoothingTimeConstant =
+        0.82;
+
+
+      source.connect(analyser);
+
+      analyser.connect(
+        audioContext.destination
+      );
+
+
+      sourceNodes[index] =
+        source;
+
+      analysers[index] =
+        analyser;
+
+      frequencyArrays[index] =
+        new Uint8Array(
+          analyser.frequencyBinCount
+        );
+
+    }
+    catch (error) {
+
+      /*
+        Audio still plays even if a browser
+        refuses Web Audio visualization.
+      */
+
+    }
+  }
+
+
+  function prepareCanvas(canvas) {
 
     const rect =
       canvas.getBoundingClientRect();
@@ -1270,26 +1507,33 @@
     const dpr =
       window.devicePixelRatio || 1;
 
-    const width =
+    const pixelWidth =
       Math.max(
         1,
-        Math.floor(rect.width * dpr)
+        Math.round(
+          rect.width * dpr
+        )
       );
 
-    const height =
+    const pixelHeight =
       Math.max(
         1,
-        Math.floor(rect.height * dpr)
+        Math.round(
+          rect.height * dpr
+        )
       );
 
 
     if (
-      canvas.width !== width ||
-      canvas.height !== height
+      canvas.width !== pixelWidth ||
+      canvas.height !== pixelHeight
     ) {
 
-      canvas.width = width;
-      canvas.height = height;
+      canvas.width =
+        pixelWidth;
+
+      canvas.height =
+        pixelHeight;
     }
 
 
@@ -1314,14 +1558,12 @@
   }
 
 
-  function drawQuietVisualizer(canvas) {
-
-    if (!canvas) {
-      return;
-    }
+  function drawIdleVisualizer(
+    canvas
+  ) {
 
     const drawing =
-      sizeCanvas(canvas);
+      prepareCanvas(canvas);
 
     const ctx =
       drawing.ctx;
@@ -1341,65 +1583,77 @@
     );
 
 
-    const barCount = 42;
+    const numberOfBars = 44;
 
     const spacing =
-      width / barCount;
+      width / numberOfBars;
 
 
     ctx.fillStyle =
-      "rgba(217,164,66,.30)";
+      "rgba(217,164,66,.28)";
 
 
     for (
       let i = 0;
-      i < barCount;
+      i < numberOfBars;
       i++
     ) {
 
-      const lineHeight =
-        2 + ((i % 5) * 0.35);
+      const barHeight =
+        2 + ((i % 4) * .35);
 
       const x =
-        i * spacing +
-        spacing / 2;
+        (i * spacing) +
+        (spacing / 2);
 
       const y =
-        (height - lineHeight) / 2;
+        (height - barHeight) / 2;
 
 
       ctx.fillRect(
         x,
         y,
         1,
-        lineHeight
+        barHeight
       );
     }
   }
 
 
-  function drawActiveVisualizer(
-    canvas
+  function drawLiveVisualizer(
+    index
   ) {
 
+    const canvas =
+      canvases[index];
+
+    const analyser =
+      analysers[index];
+
+    const data =
+      frequencyArrays[index];
+
+
     if (
-      !canvas ||
       !analyser ||
-      !frequencyData
+      !data
     ) {
 
-      drawQuietVisualizer(canvas);
+      drawIdleVisualizer(
+        canvas
+      );
+
       return;
     }
 
 
     analyser.getByteFrequencyData(
-      frequencyData
+      data
     );
 
 
     const drawing =
-      sizeCanvas(canvas);
+      prepareCanvas(canvas);
 
     const ctx =
       drawing.ctx;
@@ -1419,10 +1673,10 @@
     );
 
 
-    const barCount = 42;
+    const numberOfBars = 44;
 
     const spacing =
-      width / barCount;
+      width / numberOfBars;
 
 
     ctx.fillStyle =
@@ -1431,247 +1685,249 @@
 
     for (
       let i = 0;
-      i < barCount;
+      i < numberOfBars;
       i++
     ) {
 
-      /*
-        Concentrate mostly on the useful
-        musical portion of the spectrum.
-      */
+      const ratio =
+        i / numberOfBars;
 
-      const fraction =
-        i / barCount;
 
       const dataIndex =
         Math.min(
-          frequencyData.length - 1,
+          data.length - 1,
           Math.floor(
-            fraction *
-            frequencyData.length *
-            0.72
+            ratio *
+            data.length *
+            .72
           )
         );
 
 
-      const value =
-        frequencyData[dataIndex] /
-        255;
+      const strength =
+        data[dataIndex] / 255;
 
 
-      const lineHeight =
+      const barHeight =
         Math.max(
           2,
-          value *
+          strength *
           height *
-          0.92
+          .92
         );
 
 
       const x =
-        i * spacing +
-        spacing / 2;
+        (i * spacing) +
+        (spacing / 2);
 
       const y =
-        (height - lineHeight) / 2;
+        (height - barHeight) / 2;
 
 
       ctx.fillRect(
         x,
         y,
-        1.25,
-        lineHeight
+        1.2,
+        barHeight
       );
     }
   }
 
 
-  function drawVisualizers() {
+  function drawAllVisualizers() {
 
-    visualizers.forEach(
+    canvases.forEach(
       function(canvas, index) {
 
         if (
-          index ===
-            activeVisualizerIndex &&
           !audios[index].paused &&
           !audios[index].ended
         ) {
 
-          drawActiveVisualizer(
-            canvas
+          drawLiveVisualizer(
+            index
           );
 
-        }
-        else {
+        } else {
 
-          drawQuietVisualizer(
+          drawIdleVisualizer(
             canvas
           );
         }
-
       }
     );
 
 
     requestAnimationFrame(
-      drawVisualizers
+      drawAllVisualizers
     );
   }
 
 
   /*
-    Draw the quiet visualizers before
-    anything starts playing.
+    Draw the quiet gold lines immediately,
+    even before a song is played.
   */
 
-  visualizers.forEach(
+  canvases.forEach(
     function(canvas) {
-      drawQuietVisualizer(canvas);
+
+      drawIdleVisualizer(
+        canvas
+      );
     }
   );
 
 
-  /* STOP AUDIO */
+  /* ==========================================
+     PLAY INDIVIDUAL SONG
+     ========================================== */
 
-  function stopAllAudio(
-    resetPosition = false
-  ) {
+  function toggleSong(index) {
 
-    audios.forEach(
-      function(audio) {
-
-        audio.pause();
-
-        if (resetPosition) {
-          audio.currentTime = 0;
-        }
-
-      }
-    );
-  }
-
-
-  /* ACTIVE CARD */
-
-  function setActiveCard(index) {
-
-    document
-      .querySelectorAll(".song-card")
-      .forEach(
-        function(card) {
-
-          card.classList.remove(
-            "active-song"
-          );
-
-        }
-      );
-
-
-    if (
-      index >= 0 &&
-      audios[index]
-    ) {
-
-      const card =
-        audios[index].closest(
-          ".song-card"
-        );
-
-      if (card) {
-
-        card.classList.add(
-          "active-song"
-        );
-      }
-    }
-  }
-
-
-  function clearActiveCard() {
-
-    document
-      .querySelectorAll(".song-card")
-      .forEach(
-        function(card) {
-
-          card.classList.remove(
-            "active-song"
-          );
-
-        }
-      );
-
-    activeVisualizerIndex = -1;
-  }
-
-
-  /* RESET REPEAT SONG BUTTONS */
-
-  function resetRepeatSongButtons() {
-
-    repeatButtons.forEach(
-      function(button) {
-
-        button.textContent =
-          "↻ REPEAT SONG ×3";
-
-      }
-    );
-  }
-
-
-  function cancelRepeatSong() {
-
-    repeatSongMode = false;
-    repeatSongIndex = -1;
-    repeatSongPass = 1;
-
-    resetRepeatSongButtons();
-  }
-
-
-  function cancelPlaylistModes() {
-
-    playAllMode = false;
-    playAllPaused = false;
-
-    repeatAllMode = false;
-    playlistPass = 1;
-
-    playAllButton.textContent =
-      "▶ PLAY ALL — NEWEST TO OLDEST";
-
-    repeatAllButton.textContent =
-      "↻ REPEAT ALL ×3";
-  }
-
-
-  /* PLAY ALL / PAUSE / RESUME */
-
-  function togglePlayAll() {
-
-    setupAudioVisualizer();
-
-    cancelRepeatSong();
+    const audio =
+      audios[index];
 
 
     /*
-      PLAY ALL CURRENTLY RUNNING:
-      pause at exact position.
+      If this exact song is already
+      playing, pause it.
+    */
+
+    if (!audio.paused) {
+
+      audio.pause();
+
+      updatePlayButtons();
+      updateActiveCard();
+
+      return;
+    }
+
+
+    /*
+      Individual play cancels playlist
+      and repeat modes.
+    */
+
+    cancelPlaylist();
+
+    cancelSingleRepeat();
+
+    pauseAllExcept(index);
+
+    connectVisualizer(index);
+
+    audio.play().catch(
+      function(error) {
+
+        console.log(
+          "Audio playback failed:",
+          error
+        );
+      }
+    );
+  }
+
+
+  /* ==========================================
+     REPEAT ONE SONG THREE TIMES
+     ========================================== */
+
+  function repeatSongThreeTimes(
+    index
+  ) {
+
+    cancelPlaylist();
+
+    cancelSingleRepeat();
+
+    stopAndResetAll();
+
+    repeatSongIndex =
+      index;
+
+    repeatSongPass =
+      1;
+
+
+    repeatButtons[index].textContent =
+      "↻ REPEAT SONG — 1 OF 3";
+
+
+    connectVisualizer(index);
+
+
+    audios[index]
+      .play()
+      .catch(
+        function(error) {
+
+          console.log(
+            "Audio playback failed:",
+            error
+          );
+        }
+      );
+  }
+
+
+  /* ==========================================
+     START PLAYLIST
+     ========================================== */
+
+  function startPlaylistAt(
+    index
+  ) {
+
+    playlistIndex =
+      index;
+
+
+    pauseAllExcept(index);
+
+    connectVisualizer(index);
+
+
+    audios[index]
+      .play()
+      .catch(
+        function(error) {
+
+          console.log(
+            "Playlist playback failed:",
+            error
+          );
+        }
+      );
+  }
+
+
+  /* ==========================================
+     PLAY ALL
+     ========================================== */
+
+  function togglePlayAll() {
+
+    cancelSingleRepeat();
+
+
+    /*
+      Playlist currently running:
+      PAUSE.
     */
 
     if (
-      playAllMode &&
-      !playAllPaused
+      playlistActive &&
+      !playlistPaused
     ) {
 
       audios[
-        currentPlaylistIndex
+        playlistIndex
       ].pause();
 
-      playAllPaused = true;
+      playlistPaused = true;
 
       playAllButton.textContent =
         "▶ RESUME PLAY ALL";
@@ -1681,22 +1937,26 @@
 
 
     /*
-      PLAY ALL PAUSED:
-      resume exact song and position.
+      Playlist paused:
+      RESUME EXACT SONG AND POSITION.
     */
 
     if (
-      playAllMode &&
-      playAllPaused
+      playlistActive &&
+      playlistPaused
     ) {
 
-      playAllPaused = false;
+      playlistPaused = false;
 
       playAllButton.textContent =
         "❚❚ PAUSE PLAY ALL";
 
+      connectVisualizer(
+        playlistIndex
+      );
+
       audios[
-        currentPlaylistIndex
+        playlistIndex
       ].play();
 
       return;
@@ -1704,44 +1964,44 @@
 
 
     /*
-      START NORMAL PLAY ALL.
+      Begin a fresh Play All.
     */
 
-    stopAllAudio(true);
+    stopAndResetAll();
 
-    repeatAllMode = false;
-    playlistPass = 1;
+    repeatAllActive = false;
+    repeatAllPass = 1;
 
     repeatAllButton.textContent =
       "↻ REPEAT ALL ×3";
 
-    playAllMode = true;
-    playAllPaused = false;
-    currentPlaylistIndex = 0;
+    playlistActive = true;
+    playlistPaused = false;
+    playlistIndex = 0;
 
     playAllButton.textContent =
       "❚❚ PAUSE PLAY ALL";
 
-    audios[0].play();
+    startPlaylistAt(0);
   }
 
 
-  /* REPEAT ENTIRE CATALOG ×3 */
+  /* ==========================================
+     REPEAT ALL THREE TIMES
+     ========================================== */
 
-  function repeatAllThree() {
+  function repeatAllThreeTimes() {
 
-    setupAudioVisualizer();
+    cancelSingleRepeat();
 
-    cancelRepeatSong();
+    stopAndResetAll();
 
-    stopAllAudio(true);
+    playlistActive = true;
+    playlistPaused = false;
+    playlistIndex = 0;
 
-    playAllMode = true;
-    playAllPaused = false;
-    repeatAllMode = true;
-
-    currentPlaylistIndex = 0;
-    playlistPass = 1;
+    repeatAllActive = true;
+    repeatAllPass = 1;
 
     playAllButton.textContent =
       "❚❚ PAUSE PLAY ALL";
@@ -1749,42 +2009,33 @@
     repeatAllButton.textContent =
       "↻ REPEAT ALL — 1 OF 3";
 
-    audios[0].play();
+    startPlaylistAt(0);
   }
 
 
-  /* START PLAYLIST OVER */
+  /* ==========================================
+     START OVER
+     ========================================== */
 
-  function restartPlayAll() {
+  function startOver() {
 
-    setupAudioVisualizer();
+    cancelSingleRepeat();
 
-    cancelRepeatSong();
+    stopAndResetAll();
 
-    stopAllAudio(true);
-
-    progresses.forEach(
-      function(progress) {
-        progress.value = 0;
-      }
-    );
-
-    currentPlaylistIndex = 0;
-    playAllPaused = false;
+    playlistActive = true;
+    playlistPaused = false;
+    playlistIndex = 0;
 
 
-    if (repeatAllMode) {
+    if (repeatAllActive) {
 
-      playAllMode = true;
-      playlistPass = 1;
+      repeatAllPass = 1;
 
       repeatAllButton.textContent =
         "↻ REPEAT ALL — 1 OF 3";
 
-    }
-    else {
-
-      playAllMode = true;
+    } else {
 
       repeatAllButton.textContent =
         "↻ REPEAT ALL ×3";
@@ -1794,148 +2045,109 @@
     playAllButton.textContent =
       "❚❚ PAUSE PLAY ALL";
 
-    audios[0].play();
+    startPlaylistAt(0);
   }
 
 
-  /* INDIVIDUAL SONG */
-
-  function toggleSong(number) {
-
-    setupAudioVisualizer();
-
-    const selectedIndex =
-      number - 1;
-
-    const selected =
-      audios[selectedIndex];
-
-
-    cancelPlaylistModes();
-
-    cancelRepeatSong();
-
-
-    audios.forEach(
-      function(audio, index) {
-
-        if (
-          index !== selectedIndex
-        ) {
-
-          audio.pause();
-        }
-
-      }
-    );
-
-
-    if (selected.paused) {
-
-      selected.play();
-
-    }
-    else {
-
-      selected.pause();
-    }
-  }
-
-
-  /* REPEAT ONE SONG ×3 */
-
-  function repeatSongThree(number) {
-
-    setupAudioVisualizer();
-
-    const selectedIndex =
-      number - 1;
-
-    cancelPlaylistModes();
-
-    stopAllAudio(true);
-
-    cancelRepeatSong();
-
-    repeatSongMode = true;
-
-    repeatSongIndex =
-      selectedIndex;
-
-    repeatSongPass = 1;
-
-    repeatButtons[
-      selectedIndex
-    ].textContent =
-      "↻ REPEAT SONG — 1 OF 3";
-
-    audios[
-      selectedIndex
-    ].play();
-  }
-
-
-  /* UPDATE PLAY BUTTONS */
-
-  function updateButtons() {
-
-    audios.forEach(
-      function(audio, index) {
-
-        buttons[index].textContent =
-          audio.paused
-            ? "▶ PLAY"
-            : "❚❚ PAUSE";
-
-      }
-    );
-  }
-
-
-  /* AUDIO EVENTS */
+  /* ==========================================
+     SONG EVENTS
+     ========================================== */
 
   audios.forEach(
     function(audio, index) {
 
 
+      /* PLAY */
+
       audio.addEventListener(
         "play",
         function() {
 
-          setupAudioVisualizer();
+          connectVisualizer(
+            index
+          );
 
-          activeVisualizerIndex =
-            index;
+          updatePlayButtons();
 
-          setActiveCard(index);
-
-          updateButtons();
+          updateActiveCard();
         }
       );
 
+
+      /* PAUSE */
 
       audio.addEventListener(
         "pause",
         function() {
 
-          updateButtons();
+          updatePlayButtons();
 
+          updateActiveCard();
         }
       );
 
+
+      /* METADATA */
+
+      audio.addEventListener(
+        "loadedmetadata",
+        function() {
+
+          timeDisplays[
+            index
+          ].textContent =
+            "0:00 / " +
+            formatTime(
+              audio.duration
+            );
+        }
+      );
+
+
+      /* LOAD ERROR */
+
+      audio.addEventListener(
+        "error",
+        function() {
+
+          timeDisplays[
+            index
+          ].textContent =
+            "AUDIO FILE NOT FOUND";
+
+          console.log(
+            "Could not load:",
+            audio.getAttribute("src")
+          );
+        }
+      );
+
+
+      /* TIME UPDATE */
 
       audio.addEventListener(
         "timeupdate",
         function() {
 
-          if (audio.duration) {
+          if (
+            Number.isFinite(
+              audio.duration
+            ) &&
+            audio.duration > 0
+          ) {
 
-            progresses[index].value =
-              audio.currentTime /
-              audio.duration *
-              100;
+            progressBars[
+              index
+            ].value =
+              (
+                audio.currentTime /
+                audio.duration
+              ) * 100;
 
-            times[index].textContent =
+
+            timeDisplays[
+              index
+            ].textContent =
               formatTime(
                 audio.currentTime
               ) +
@@ -1948,39 +2160,34 @@
       );
 
 
-      audio.addEventListener(
-        "loadedmetadata",
+      /* SEEK */
+
+      progressBars[
+        index
+      ].addEventListener(
+        "input",
         function() {
 
-          times[index].textContent =
-            "0:00 / " +
-            formatTime(
+          if (
+            Number.isFinite(
               audio.duration
-            );
+            ) &&
+            audio.duration > 0
+          ) {
+
+            audio.currentTime =
+              (
+                progressBars[
+                  index
+                ].value / 100
+              ) *
+              audio.duration;
+          }
         }
       );
 
 
-      /* SEEK */
-
-      progresses[index]
-        .addEventListener(
-          "input",
-          function() {
-
-            if (audio.duration) {
-
-              audio.currentTime =
-                progresses[index]
-                  .value /
-                100 *
-                audio.duration;
-            }
-          }
-        );
-
-
-      /* SONG ENDED */
+      /* SONG FINISHED */
 
       audio.addEventListener(
         "ended",
@@ -1988,13 +2195,11 @@
 
 
           /*
-            REPEAT INDIVIDUAL SONG
+            SINGLE SONG ×3
           */
 
           if (
-            repeatSongMode &&
-            index ===
-              repeatSongIndex
+            repeatSongIndex === index
           ) {
 
             if (
@@ -2003,6 +2208,7 @@
 
               repeatSongPass++;
 
+
               repeatButtons[
                 index
               ].textContent =
@@ -2010,105 +2216,107 @@
                 repeatSongPass +
                 " OF 3";
 
+
               audio.currentTime = 0;
 
               audio.play();
 
-            }
-            else {
+              return;
+
+            } else {
 
               audio.currentTime = 0;
 
-              cancelRepeatSong();
+              cancelSingleRepeat();
 
-              clearActiveCard();
+              updatePlayButtons();
 
-              updateButtons();
+              updateActiveCard();
+
+              return;
             }
-
-            return;
           }
 
 
           /*
-            NORMAL INDIVIDUAL SONG
+            NOT IN PLAYLIST MODE.
           */
 
-          if (!playAllMode) {
+          if (!playlistActive) {
 
-            clearActiveCard();
+            updatePlayButtons();
 
-            updateButtons();
-
-            return;
-          }
-
-
-          /*
-            MOVE TO NEXT SONG
-          */
-
-          currentPlaylistIndex =
-            index + 1;
-
-
-          if (
-            currentPlaylistIndex <
-            audios.length
-          ) {
-
-            playAllPaused = false;
-
-            audios[
-              currentPlaylistIndex
-            ].currentTime = 0;
-
-            audios[
-              currentPlaylistIndex
-            ].play();
+            updateActiveCard();
 
             return;
           }
 
 
           /*
-            END OF CATALOG:
-            REPEAT ALL IF ACTIVE.
+            NEXT SONG EXISTS.
           */
 
           if (
-            repeatAllMode &&
-            playlistPass < 3
+            playlistIndex <
+            SONG_COUNT - 1
           ) {
 
-            playlistPass++;
+            playlistIndex++;
 
-            currentPlaylistIndex = 0;
+            playlistPaused = false;
+
+            startPlaylistAt(
+              playlistIndex
+            );
+
+            return;
+          }
+
+
+          /*
+            END OF ENTIRE CATALOG.
+            REPEAT ALL IF NEEDED.
+          */
+
+          if (
+            repeatAllActive &&
+            repeatAllPass < 3
+          ) {
+
+            repeatAllPass++;
 
             repeatAllButton.textContent =
               "↻ REPEAT ALL — " +
-              playlistPass +
+              repeatAllPass +
               " OF 3";
 
-            audios[0].currentTime = 0;
 
-            audios[0].play();
+            playlistIndex = 0;
+
+            audios.forEach(
+              function(item) {
+
+                item.currentTime = 0;
+              }
+            );
+
+
+            startPlaylistAt(0);
 
             return;
           }
 
 
           /*
-            EVERYTHING FINISHED.
+            FINISHED.
           */
 
-          playAllMode = false;
-          playAllPaused = false;
+          playlistActive = false;
+          playlistPaused = false;
+          playlistIndex = 0;
 
-          repeatAllMode = false;
-
-          currentPlaylistIndex = 0;
-          playlistPass = 1;
+          repeatAllActive = false;
+          repeatAllPass = 1;
 
           playAllButton.textContent =
             "▶ PLAY ALL — NEWEST TO OLDEST";
@@ -2116,9 +2324,9 @@
           repeatAllButton.textContent =
             "↻ REPEAT ALL ×3";
 
-          clearActiveCard();
+          updatePlayButtons();
 
-          updateButtons();
+          updateActiveCard();
 
         }
       );
@@ -2127,53 +2335,122 @@
   );
 
 
-  /* SHARE */
+  /* ==========================================
+     BUTTON EVENTS
+     ========================================== */
 
-  async function sharePage() {
+  playButtons.forEach(
+    function(button, index) {
 
-    const shareData = {
-      title: "Ellsworth Barrett",
-      text:
-        "Listen to music by Ellsworth Barrett.",
-      url: window.location.href
-    };
+      button.addEventListener(
+        "click",
+        function() {
 
-
-    if (navigator.share) {
-
-      try {
-
-        await navigator.share(
-          shareData
-        );
-
-      }
-      catch (error) {
-      }
-
+          toggleSong(index);
+        }
+      );
     }
-    else {
+  );
 
-      try {
 
-        await navigator.clipboard
-          .writeText(
-            window.location.href
+  repeatButtons.forEach(
+    function(button, index) {
+
+      button.addEventListener(
+        "click",
+        function() {
+
+          repeatSongThreeTimes(
+            index
+          );
+        }
+      );
+    }
+  );
+
+
+  playAllButton.addEventListener(
+    "click",
+    togglePlayAll
+  );
+
+
+  repeatAllButton.addEventListener(
+    "click",
+    repeatAllThreeTimes
+  );
+
+
+  startOverButton.addEventListener(
+    "click",
+    startOver
+  );
+
+
+  /* ==========================================
+     SHARE
+     ========================================== */
+
+  shareButton.addEventListener(
+    "click",
+    async function() {
+
+      const shareData = {
+
+        title:
+          "Ellsworth Barrett",
+
+        text:
+          "Listen to music by Ellsworth Barrett.",
+
+        url:
+          window.location.href
+      };
+
+
+      if (navigator.share) {
+
+        try {
+
+          await navigator.share(
+            shareData
           );
 
-        alert(
-          "Link copied to clipboard."
-        );
+        }
+        catch (error) {
+        }
 
-      }
-      catch (error) {
+      } else {
 
-        alert(
-          window.location.href
-        );
+        try {
+
+          await navigator.clipboard
+            .writeText(
+              window.location.href
+            );
+
+          alert(
+            "Link copied to clipboard."
+          );
+
+        }
+        catch (error) {
+
+          alert(
+            window.location.href
+          );
+        }
       }
     }
-  }
+  );
+
+
+  /* ==========================================
+     INITIAL BUTTON STATE
+     ========================================== */
+
+  updatePlayButtons();
+  updateActiveCard();
 
 </script>
 
